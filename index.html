@@ -155,7 +155,7 @@
             data-src="animations/power_up_scene.json"
             data-w-id="3981751c-7ee8-02f5-225f-a0786ca9271f">
           </div>
-          <!-- Santah Intro Animation -->
+          <!-- Welcome Scene / Santah Intro Animation -->
           <div class="santah__lottie-2" data-animation-type="lottie" data-autoplay="0" data-default-duration="11.4"
             data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
             data-renderer="svg"
@@ -211,6 +211,8 @@
                   </div>
                 </div>
               </div>
+              
+
               <div class="press-text" style="opacity:1">
                 <div class="press-text__wrap">
                   <h6 class="press-text__words">
@@ -338,6 +340,24 @@
           </div>
         </div>
       </div>
+
+      <!-- QUIZ SECTION HERE -->
+      <div class="quiz-section" style="display: none;">
+        <div class="quiz-container">
+          <div class="quiz-content">
+            <h2 class="quiz-title">QUESTION</h2>
+            <p class="quiz-question">1. What's your favorite Christmas movie?</p>
+            <div class="quiz-options">
+              <button class="quiz-option">Ang Tanging Ina (2003)</button>
+              <button class="quiz-option">Four Sisters and a Wedding (2013)</button>
+              <button class="quiz-option">Seven Sundays (2017)</button>
+              <button class="quiz-option">Home Alone (1990)</button>
+            </div>
+            <button class="quiz-next">NEXT</button>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Cute Cookie Token -->
@@ -411,23 +431,24 @@
           data-src="animations/milk_back.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b25">
         </div>
+        <div class="santah__lottie-6" data-animation-type="lottie" data-autoplay="1"
+          data-default-duration="2.2333333333333334" data-direction="1" data-duration="0" data-is-ix2-target="0"
+          data-loop="1" data-renderer="svg"
+          data-src="animations/milk_front.json"
+          data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b28">
+        </div>
         <div class="santah__lottie-5" data-animation-type="lottie" data-autoplay="0"
           data-default-duration="1.7666666666666666" data-direction="1" data-duration="0" data-is-ix2-target="1"
           data-loop="0" data-renderer="svg"
           data-src="animations/cookie_drag.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b26">
         </div>
+        <!-- Cookie Launch should play AFTER Quiz -->
         <div class="santah__lottie-7" data-animation-type="lottie" data-autoplay="0" data-default-duration="1.1"
           data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
           data-renderer="svg"
           data-src="animations/cookie_launch.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b27">
-        </div>
-        <div class="santah__lottie-6" data-animation-type="lottie" data-autoplay="1"
-          data-default-duration="2.2333333333333334" data-direction="1" data-duration="0" data-is-ix2-target="0"
-          data-loop="1" data-renderer="svg"
-          data-src="animations/milk_front"
-          data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b28">
         </div>
       </div>
     </div>
@@ -472,7 +493,7 @@
     function waitingHold() {
       waitingFunction = window.setTimeout(function () {
         document.getElementById('waiting1').play();
-      }, 47000);
+      }, 10000);
     }
     function stopWaiting() {
       clearTimeout(waitingFunction);
@@ -482,7 +503,7 @@
     function waitingHold2() {
       waitingFunction2 = window.setTimeout(function () {
         document.getElementById('waiting2').play();
-      }, 67000);
+      }, 25000);
     }
     function stopWaiting2() {
       clearTimeout(waitingFunction2);
@@ -506,13 +527,33 @@
       fortune.load();
     });
 
-    // PLAY FORTUNE
-    $(".cookie__release").click(function () {
+    welcome.addEventListener('ended', function() {
+      document.querySelector('.quiz-section').style.display = 'flex';
+      
+    });
+
+    // Handle quiz next button
+    document.querySelector('.quiz-next').addEventListener('click', function() {
+      document.querySelector('.quiz-section').style.display = 'none';
+      
+      
+      const cookieLaunch = document.querySelector('.santah__lottie-7');
+      cookieLaunch.setAttribute('data-autoplay', '1');
+      
+      fortune.play();
+
+      const cookieScene = document.querySelector('.contain.is--absolute');
+      cookieScene.style.display = 'block';
 
       setTimeout(() => {
-        fortune.play();
-      }, 500);
+        document.querySelector('.santah__lottie-6').setAttribute('data-autoplay', '1');
+        document.querySelector('.santah__lottie-10').setAttribute('data-autoplay', '1');
+      }, 1100);
+    });
 
+    // PLAY FORTUNE
+    document.querySelector('.cookie__release').addEventListener('click', function() {
+      fortune.play();
     });
 
     // PLAY COIN
@@ -607,6 +648,7 @@
       $('.ticket__naughty').css('display', 'block');
     }
   </script>
+  
 </body>
 
 </html>
