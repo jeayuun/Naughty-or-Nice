@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #quiz-section {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Default: two columns */
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    .option-item {
+      padding: 15px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .option-item:hover {
+      background-color: #e0eaff;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="quiz-section"> <!--use this div to add a border araound everything when styling -->
+    <h1>Sample Quiz</h1>
+    <div id="question">Loading question...</div>
+    <ul id="options"></ul>
+    <button id="next-btn" onclick="nextQuestion()" style="margin: 10px; padding: 10px 20px; cursor: pointer;">Next</button>
+    <p id="score"></p>
+  </div>
+
+  <!-- Link your external JS -->
+  <script src="Sample_Quiz.js"></script>
+</body>
+
+</html>
