@@ -124,7 +124,7 @@
       </div>
     </div>
 
-    <!-- Quiz Page -->
+    <!-- Main Page -->
     <div class="overflow" style="filter:blur(0px)">
 
       <!-- Background -->
@@ -163,8 +163,9 @@
             data-w-id="739f4c6e-7554-ce61-5355-ddbefd96b2bf">
           </div>
           <!-- Fortune Animation -->
-          <div class="santah__lottie-8" data-animation-type="lottie" data-autoplay="0" data-default-duration="14.9"
-            data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
+          <div class="santah__lottie-8" data-animation-type="lottie" data-autoplay="0" 
+            data-default-duration="14.9" data-direction="1" data-duration="0" 
+            data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
             data-renderer="svg"
             data-src="animations/fortune_scene.json"
             data-w-id="a3724e63-ca75-b35f-9670-1c6337a732cf">
@@ -341,7 +342,7 @@
         </div>
       </div>
 
-      <!-- QUIZ SECTION HERE -->
+      <!-- QUIZ SECTION HERE @David-->
       <div class="quiz-section" style="display: none;">
         <div class="quiz-container">
           <div class="quiz-content">
@@ -431,17 +432,17 @@
           data-src="animations/milk_back.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b25">
         </div>
-        <div class="santah__lottie-6" data-animation-type="lottie" data-autoplay="1"
-          data-default-duration="2.2333333333333334" data-direction="1" data-duration="0" data-is-ix2-target="0"
-          data-loop="1" data-renderer="svg"
-          data-src="animations/milk_front.json"
-          data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b28">
-        </div>
         <div class="santah__lottie-5" data-animation-type="lottie" data-autoplay="0"
           data-default-duration="1.7666666666666666" data-direction="1" data-duration="0" data-is-ix2-target="1"
           data-loop="0" data-renderer="svg"
           data-src="animations/cookie_drag.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b26">
+        </div>
+        <div class="santah__lottie-6" data-animation-type="lottie" data-autoplay="1"
+          data-default-duration="2.2333333333333334" data-direction="1" data-duration="0" data-is-ix2-target="0"
+          data-loop="1" data-renderer="svg"
+          data-src="animations/milk_front.json"
+          data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b28">
         </div>
         <!-- Cookie Launch should play AFTER Quiz -->
         <div class="santah__lottie-7" data-animation-type="lottie" data-autoplay="0" data-default-duration="1.1"
@@ -532,28 +533,71 @@
       
     });
 
-    // Handle quiz next button
+    document.querySelector('.cookie__release').addEventListener('click', function() {
+      fortune.play();
+      
+      setTimeout(() => {
+        fortune.pause();
+        fortune.currentTime = 0;
+      }, 1000);
+    });
+
+    let fortuneAnimation = document.querySelector('.santah__lottie-8');
+    let isFortunePlaying = false;
+
     document.querySelector('.quiz-next').addEventListener('click', function() {
       document.querySelector('.quiz-section').style.display = 'none';
       
-      
       const cookieLaunch = document.querySelector('.santah__lottie-7');
-      cookieLaunch.setAttribute('data-autoplay', '1');
+      const fortuneAnimation = document.querySelector('.santah__lottie-8');
+      const fortuneAudio = document.getElementById('fortune');
       
-      fortune.play();
+      const audioDuration = 14900; 
+      const cookieLaunchDuration = 1100; 
+      
+      fortuneAudio.currentTime = 0;
+      fortuneAudio.play();
+      isFortunePlaying = true;
 
-      const cookieScene = document.querySelector('.contain.is--absolute');
-      cookieScene.style.display = 'block';
+      cookieLaunch.style.display = 'block';
+      cookieLaunch.setAttribute('data-autoplay', '1');
 
       setTimeout(() => {
-        document.querySelector('.santah__lottie-6').setAttribute('data-autoplay', '1');
-        document.querySelector('.santah__lottie-10').setAttribute('data-autoplay', '1');
-      }, 1100);
-    });
+          fortuneAnimation.style.display = 'block';
+          fortuneAnimation.setAttribute('data-autoplay', '1');
+          
+          const remainingAudioTime = audioDuration - cookieLaunchDuration;
+          const animationSpeed = (14.9 / (remainingAudioTime / 1000)).toFixed(2);
+          fortuneAnimation.setAttribute('data-speed', animationSpeed);
+      }, cookieLaunchDuration);
 
-    // PLAY FORTUNE
+      fortuneAudio.addEventListener('ended', () => {
+          document.querySelector('.santah__lottie-6').setAttribute('data-autoplay', '1');
+          document.querySelector('.santah__lottie-10').setAttribute('data-autoplay', '1');
+          
+          cookieLaunch.style.display = 'none';
+          fortuneAnimation.style.display = 'none';
+          isFortunePlaying = false;
+      });
+  });
+
     document.querySelector('.cookie__release').addEventListener('click', function() {
       fortune.play();
+      isFortunePlaying = true;
+      
+      setTimeout(() => {
+        fortune.pause();
+        fortune.currentTime = 0;
+        fortuneAnimation.setAttribute('data-autoplay', '0');
+        fortuneAnimation.setAttribute('data-current-time', '0');
+        isFortunePlaying = false;
+      }, 1000);
+    });
+
+    $('.range').bind('touchend mouseup', function (e) {
+      if (slider.value > 340) {
+        $(".cookie__release").click();
+      }
     });
 
     // PLAY COIN
@@ -615,14 +659,6 @@
     var vh = window.innerHeight;
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
-
-    // Play interaction when lifting up on slider
-    $('.range').bind('touchend mouseup', function (e) {
-      if (slider.value > 340) {
-        $(".cookie__release").click();
-        $(".next-link").click();
-      }
-    });
 
     // Update the current slider value (each time you drag the slider handle)
     slider.oninput = function () {

@@ -2789,3 +2789,8 @@ blockquote {
   cursor: pointer;
   float: right;
 }
+
+.santah__lottie-7,
+.santah__lottie-8 {
+  display: none;
+}
