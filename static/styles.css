@@ -2796,11 +2796,11 @@ blockquote {
   padding: 1rem;
   background: #a45252;
   border: none;
-  border-radius: 5px;
+  border-radius: 5px; 
   cursor: pointer;
 }
 
-.quiz-next {
+.quiz-finish {
   background: #c00;
   color: white;
   padding: 1rem 2rem;
