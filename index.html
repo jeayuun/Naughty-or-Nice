@@ -83,13 +83,13 @@
         <!-- Game Rules Dialogue -->
         <div class="enter__2-contain">
           <p class="enter__story">
-            For centuries, curious historians have traveled the world, desperately seeking the true Legend of <span style="color: red;">Santah</span>.<br/>
+            For centuries, curious historians have traveled the world, desperately seeking the true Legend of <span style="color: red;">Santar</span>.<br/>
             <br/>Folklore has it, he's Santa's not-so-jolly twin with a nasty eggnog habit, banished for selling black market toys on Amazon.<br/>
-            <br/>We may never know of the curse that turned Santah into his present state as the mechanical, coin-eating medium of holiday fortunes.<br/>
-            <br/>Now, Santah holds the power. The fate of whether you're <strong>naughty</strong> or <strong>nice</strong> is in his hands.<br/>
-            <br/>To uncover the truth, you must answer <span style="color: red;">20 questions</span>—your every response revealing more about your heart. But beware, Santah doesn't take kindly to mischief. Your choices will determine if you've earned a spot on the nice list… or if you're doomed to his darker whims.<br/>
+            <br/>We may never know of the curse that turned Santar into his present state as the mechanical, coin-eating medium of holiday fortunes.<br/>
+            <br/>Now, Santar holds the power. The fate of whether you're <strong>naughty</strong> or <strong>nice</strong> is in his hands.<br/>
+            <br/>To uncover the truth, you must answer <span style="color: red;">20 questions</span>—your every response revealing more about your heart. But beware, Santar doesn't take kindly to mischief. Your choices will determine if you've earned a spot on the nice list… or if you're doomed to his darker whims.<br/>
             <br/><span style="color: red;">Are you <strong>naughty</strong> or <strong>nice</strong>?</span>
-          </p>
+          </p>~
         </div>
 
         <div class="enter__gradient">
@@ -117,7 +117,7 @@
           <img alt="sound icon right" class="enter__sound-icon" loading="lazy" src="static/assets/images/sound_right.svg"/>
         </div>
         <p class="enter__sound is--credit">
-          COMP 016: Web Development | Group 3: Midterm Project Submission
+          COMP 016: Web Development | Midterm Project Submission
         </p>
       </div>
       <div class="enter__bottom">
@@ -141,7 +141,7 @@
         </div>
       </div>
 
-      <!-- Santah Animations -->
+      <!-- Santar Animations -->
       <div class="contain" style="opacity:0">
         <div class="border">
         </div>
@@ -155,7 +155,7 @@
             data-src="animations/power_up_scene.json"
             data-w-id="3981751c-7ee8-02f5-225f-a0786ca9271f">
           </div>
-          <!-- Welcome Scene / Santah Intro Animation -->
+          <!-- Welcome Scene / Intro Animation -->
           <div class="santah__lottie-2" data-animation-type="lottie" data-autoplay="0" data-default-duration="11.4"
             data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
             data-renderer="svg"
@@ -212,7 +212,6 @@
                   </div>
                 </div>
               </div>
-              
 
               <div class="press-text" style="opacity:1">
                 <div class="press-text__wrap">
@@ -255,13 +254,13 @@
               <img alt="ticket (back part)" class="ticket__img" loading="lazy" src="static/assets/images/ticket_back.png"/>
               <div class="ticket__content">
 
-                <!-- Naughty or Nice? -->
+                <!-- Naughty or Nice? (WIP) -->
                 <div class="ticket__head">
                   <img alt="NICE" class="ticket__nice" loading="lazy" src="static/assets/images/result_nice.svg"/>
                   <img alt="NAUGHTY" class="ticket__naughty" loading="lazy" src="static/assets/images/result_naughty.svg"/>
                 </div>
 
-                <!-- Cute Trivia -->
+                <!-- Cute Trivia (WIP) -->
                 <div class="ticket__paragraphs">
                   
                   <!-- For the Nice ones -->
@@ -326,7 +325,7 @@
                   </p>
                 </div>
 
-                <!-- View Goodness Score -->
+                <!-- View Goodness Score (WIP) -->
                 <div>
                   
                 </div>
@@ -342,7 +341,7 @@
         </div>
       </div>
 
-      <!-- QUIZ SECTION HERE @David-->
+      <!-- QUIZ SECTION HERE @David (WIP)-->
       <div class="quiz-section" style="display: none;">
         <div class="quiz-container">
           <div class="quiz-content">
@@ -370,7 +369,7 @@
               You Found A
             </h6>
             <h2 class="is--cookie-bottom" style="opacity:0">
-              Santah
+              Santar
               <br />
               Token!
             </h2>
@@ -494,7 +493,7 @@
     function waitingHold() {
       waitingFunction = window.setTimeout(function () {
         document.getElementById('waiting1').play();
-      }, 10000);
+      }, 30000);
     }
     function stopWaiting() {
       clearTimeout(waitingFunction);
@@ -504,11 +503,20 @@
     function waitingHold2() {
       waitingFunction2 = window.setTimeout(function () {
         document.getElementById('waiting2').play();
-      }, 25000);
+      }, 45000);
     }
     function stopWaiting2() {
       clearTimeout(waitingFunction2);
     }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var skipButton = document.querySelector('.contest-button.is--skip');
+        if (skipButton) {
+          skipButton.style.display = 'block'; 
+        }
+      }, 5000);
+    });
 
     // Cue up all audio and BEGIN EXPERIENCE
     $(".enter__button").click(function () {

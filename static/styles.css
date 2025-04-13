@@ -2745,6 +2745,26 @@ blockquote {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'shackleton';
+  src: url('/static/assets/Shackleton.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.contest-button.is--skip {
+  display: none;
+}
+
+
+.santah__lottie-7,
+.santah__lottie-8 {
+  display: none;
+}
+
+
+
 .quiz-section {
   position: fixed;
   top: 0;
@@ -2788,9 +2808,4 @@ blockquote {
   border-radius: 5px;
   cursor: pointer;
   float: right;
-}
-
-.santah__lottie-7,
-.santah__lottie-8 {
-  display: none;
 }
