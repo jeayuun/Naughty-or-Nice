@@ -2763,8 +2763,6 @@ blockquote {
   display: none;
 }
 
-
-
 .quiz-section {
   position: fixed;
   top: 0;
@@ -2779,11 +2777,29 @@ blockquote {
 }
 
 .quiz-container {
-  background: #3e0a0a;
-  padding: 2rem;
+  position: relative; /* Needed for positioning the logo */
+  background-image: url('/static/assets/images/quiz_page.png');
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  padding-top: 6rem;
   border-radius: 10px;
-  max-width: 600px;
+  max-width: 700px;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.quiz-logo {
+  position: absolute;
+  top: -180px; 
+  z-index: 10; 
+}
+.quiz-container img {
+  max-width: 150%;
 }
 
 .quiz-options {
@@ -2796,16 +2812,31 @@ blockquote {
   padding: 1rem;
   background: #a45252;
   border: none;
-  border-radius: 5px; 
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .quiz-finish {
-  background: #c00;
-  color: white;
-  padding: 1rem 2rem;
+  background: none;
   border: none;
-  border-radius: 5px;
+  padding: 0;
   cursor: pointer;
-  float: right;
+  display: block;
+  margin: 0 auto;
+}
+
+.quiz-finish-img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.quiz-finish-img:hover {
+  transform: scale(1.05);
+}
+
+.quiz-finish {
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
 }
