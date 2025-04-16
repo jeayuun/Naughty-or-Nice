@@ -2757,10 +2757,8 @@ blockquote {
   display: none;
 }
 
-
-.santah__lottie-7,
-.santah__lottie-8 {
-  display: none;
+.contain.santar {
+  transition: opacity 0.5s ease;
 }
 
 .quiz-section {
@@ -2769,21 +2767,32 @@ blockquote {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
   z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.quiz-section.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quiz-section.active ~ .contain.santar {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 
 .quiz-container {
-  position: relative; /* Needed for positioning the logo */
+  position: relative; 
   background-image: url('/static/assets/images/quiz_page.png');
   background-size: cover;
   background-position: center;
   padding: 3rem;
   padding-top: 6rem;
-  border-radius: 10px;
+  border-radius: 30px;
   max-width: 700px;
   width: 90%;
   display: flex;
@@ -2798,22 +2807,54 @@ blockquote {
   top: -180px; 
   z-index: 10; 
 }
+
 .quiz-container img {
   max-width: 150%;
 }
 
+.quiz-question {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: youngserif, sans-serif;
+  font-size: 2.8vh;
+  font-weight: 500;
+  text-align: center;
+  color: #e2dccf;
+  font-weight: bold;
+}
+
 .quiz-options {
   display: grid;
-  gap: 1rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: auto; 
+  grid-auto-rows: 1fr; 
+  gap: 2rem;  
+  margin: 2rem;
 }
 
 .quiz-option {
-  padding: 1rem;
-  background: #a45252;
-  border: none;
-  border-radius: 5px;
+  background: linear-gradient(to bottom, #a21b16, #6f0e0b); 
+  border: 3px solid #c37509; 
+  color: #e2dccf;
+  font-family: shackleton, sans-serif;
+  font-size: 2vh;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: 15px;
+  border-radius: 15px; 
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  overflow: hidden; 
+}
+
+.quiz-option:hover {
+  transform: scale(1.05); 
+}
+
+.quiz-option:active {
+  transform: scale(0.98); 
+  background: linear-gradient(to bottom, #6f0e0b, #a21b16); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .quiz-finish {
@@ -2840,3 +2881,4 @@ blockquote {
   color: inherit;
   border-radius: 0;
 }
+
