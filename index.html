@@ -89,7 +89,7 @@
             <br/>Now, Santar holds the power. The fate of whether you're <strong>naughty</strong> or <strong>nice</strong> is in his hands.<br/>
             <br/>To uncover the truth, you must answer <span style="color: red;">20 questions</span>—your every response revealing more about your heart. But beware, Santar doesn't take kindly to mischief. Your choices will determine if you've earned a spot on the nice list… or if you're doomed to his darker whims.<br/>
             <br/><span style="color: red;">Are you <strong>naughty</strong> or <strong>nice</strong>?</span>
-          </p>~
+          </p>
         </div>
 
         <div class="enter__gradient">
@@ -142,7 +142,7 @@
       </div>
 
       <!-- Santar Animations -->
-      <div class="contain" style="opacity:0">
+      <div class="contain santar" style="opacity:0">
         <div class="border">
         </div>
         <div class="border is--alt">
@@ -346,14 +346,14 @@
         <div class="quiz-container">
           <img src="/static/assets/images/quiz_page_logo.png" alt="Quiz Logo" class="quiz-logo">
           <div class="quiz-content">
-            <p class="quiz-question">1. What's your favorite Christmas movie?</p>
+            <p class="quiz-question">1. What's your go-to Christmas jam?</p>
             <div class="quiz-options">
-              <button class="quiz-option">Ang Tanging Ina (2003)</button>
-              <button class="quiz-option">Four Sisters and a Wedding (2013)</button>
-              <button class="quiz-option">Seven Sundays (2017)</button>
-              <button class="quiz-option">Home Alone (1990)</button>
+              <button class="quiz-option">Mistletoe by Justin Bieber</button>
+              <button class="quiz-option">Star ng Pasko by ABS-CBN</button>
+              <button class="quiz-option">All I Want For Christmas Is You by Mariah Carey</button>
+              <button class="quiz-option">Christmas in Our Hearts by Jose Mari Chan</button>
             </div>
-            <button class="quiz-finish">
+            <button class="quiz-finish" onclick="handleQuizFinish()">
               <img src="static/assets/images/finish.png" alt="Finish Quiz" class="quiz-finish-img">
             </button>
           </div>
@@ -538,87 +538,6 @@
       fortune.load();
     });
 
-    welcome.addEventListener('ended', function() {
-      document.querySelector('.quiz-section').style.display = 'flex';
-      
-    });
-
-    document.querySelector('.cookie__release').addEventListener('click', function() {
-      fortune.play();
-      
-      setTimeout(() => {
-        fortune.pause();
-        fortune.currentTime = 0;
-      }, 1000);
-    });
-
-    let fortuneAnimation = document.querySelector('.santah__lottie-8');
-    let isFortunePlaying = false;
-
-    document.querySelector('.quiz-finish').addEventListener('click', function() {
-      document.querySelector('.quiz-section').style.display = 'none';
-      
-      const cookieLaunch = document.querySelector('.santah__lottie-7');
-      const fortuneAnimation = document.querySelector('.santah__lottie-8');
-      const fortuneAudio = document.getElementById('fortune');
-      
-      const audioDuration = 14900; 
-      const cookieLaunchDuration = 1100; 
-      
-      fortuneAudio.currentTime = 0;
-      fortuneAudio.play();
-      isFortunePlaying = true;
-
-      cookieLaunch.style.display = 'block';
-      cookieLaunch.setAttribute('data-autoplay', '1');
-
-      setTimeout(() => {
-          fortuneAnimation.style.display = 'block';
-          fortuneAnimation.setAttribute('data-autoplay', '1');
-          
-          const remainingAudioTime = audioDuration - cookieLaunchDuration;
-          const animationSpeed = (14.9 / (remainingAudioTime / 1000)).toFixed(2);
-          fortuneAnimation.setAttribute('data-speed', animationSpeed);
-      }, cookieLaunchDuration);
-
-      fortuneAudio.addEventListener('ended', () => {
-          document.querySelector('.santah__lottie-6').setAttribute('data-autoplay', '1');
-          document.querySelector('.santah__lottie-10').setAttribute('data-autoplay', '1');
-          
-          cookieLaunch.style.display = 'none';
-          fortuneAnimation.style.display = 'none';
-          isFortunePlaying = false;
-      });
-  });
-
-    document.querySelector('.cookie__release').addEventListener('click', function() {
-      fortune.play();
-      isFortunePlaying = true;
-      
-      setTimeout(() => {
-        fortune.pause();
-        fortune.currentTime = 0;
-        fortuneAnimation.setAttribute('data-autoplay', '0');
-        fortuneAnimation.setAttribute('data-current-time', '0');
-        isFortunePlaying = false;
-      }, 1000);
-    });
-
-    $('.range').bind('touchend mouseup', function (e) {
-      if (slider.value > 340) {
-        $(".cookie__release").click();
-      }
-    });
-
-    // PLAY COIN
-    $(".tricks-press__final").click(function () {
-
-      setTimeout(() => {
-        cookie.play();
-      }, 11500);
-
-    });
-
     // PRESS AND HOLD
     var tricksNumber = $('.tricks-number').text();
     var tricksTime = +tricksNumber;
@@ -638,10 +557,12 @@
 
       }, tricksTime);
     }
+
     function stopTricksLinkPage2() {
       clearTimeout(tricksNewPage);
     }
 
+    // Power Up Scene
     $('.tricks-press').bind('touchstart mousedown', function (e) {
       waiting1.pause();
       waiting2.pause();
@@ -664,7 +585,88 @@
       powerUp.currentTime = 0;
     });
 
+    
+    // PLAY COIN
+    const cookieLaunch = document.querySelector('.santah__lottie-7');
+    const fortuneAudio = document.getElementById('fortune');
+    let isFortunePlaying = false;
+
+    $(".tricks-press__final").click(function () {
+
+      setTimeout(() => {
+        cookie.play();
+      }, 11500);
+
+    });
+
+    document.querySelector('.cookie__release').addEventListener('click', function() {
+      fortune.play();
+      isFortunePlaying = true;
+
+      // Hide Santar animations
+      document.querySelector('.contain.santar').style.opacity = '0';
+
+      // Show and play cookie launch animation
+      cookieLaunch.style.display = 'block';
+      cookieLaunch.setAttribute('data-autoplay', '1');
+      
+      setTimeout(() => {
+        cookieLaunch.style.display = 'none';
+        
+        // Show quiz with transition
+        const quizSection = document.querySelector('.quiz-section');
+        quizSection.classList.add('active');
+        quizSection.style.display = 'flex';
+        
+        // Reset audio
+        fortune.pause();
+        fortune.currentTime = 0;
+        fortune.load();
+        isFortunePlaying = false;
+        
+        // Force reflow
+        void quizSection.offsetWidth;
+      }, 1100);
+    });
+
+    // New quiz finish handler
+    function handleQuizFinish() {
+      const quizSection = document.querySelector('.quiz-section');
+      const santarContainer = document.querySelector('.contain.santar');
+      const fortuneAnimation = document.querySelector('.santah__lottie-8');
+
+      // Hide quiz
+      quizSection.classList.remove('active');
+      setTimeout(() => {
+        quizSection.style.display = 'none';
+        
+        // Show Santar animations
+        santarContainer.style.opacity = '1';
+        
+        // Play fortune animation
+        fortuneAnimation.setAttribute('data-autoplay', '1');
+        fortuneAnimation.style.display = 'block';
+        
+        // Reset animation if needed
+        const animation = lottie.getRegisteredAnimations().find(a => a.name === 'fortune_scene');
+        if (animation) {
+          animation.goToAndPlay(0, true);
+        }
+        
+        // Play fortune audio
+        fortune.currentTime = 0;
+        fortune.play();
+      }, 500);
+    }
+    
+
     // SLIDER
+    $('.range').bind('touchend mouseup', function (e) {
+      if (slider.value > 340) {
+        $(".cookie__release").click();
+      }
+    });
+
     document.documentElement.scrollTop = 0;
     var vh = window.innerHeight;
     var slider = document.getElementById("myRange");
@@ -684,6 +686,13 @@
 
     }
 
+
+
+
+
+    
+
+    // Ticket
     var random = Math.floor(Math.random() * jQuery('.ticket__paragraph').length);
     var myFortune = jQuery('.ticket__paragraph').hide().eq(random);
     myFortune.show();
