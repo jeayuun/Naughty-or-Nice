@@ -152,7 +152,6 @@ select {
 button,
 html input[type="button"],
 input[type="reset"] {
-  -webkit-appearance: button;
   cursor: pointer;
 }
 
@@ -180,10 +179,6 @@ input[type="radio"] {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
-}
-
-input[type="search"] {
-  -webkit-appearance: none;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -229,7 +224,6 @@ th {
 
 [class^="w-icon-"],
 [class*=" w-icon-"] {
-  speak: none;
   font-variant: normal;
   text-transform: none;
   -webkit-font-smoothing: antialiased;
@@ -302,10 +296,6 @@ html.w-mod-touch * {
   padding: 9px 15px;
   text-decoration: none;
   display: inline-block;
-}
-
-input.w-button {
-  -webkit-appearance: button;
 }
 
 html[data-w-dynpage] [data-w-cloak] {
@@ -430,7 +420,6 @@ button,
 [type="button"],
 [type="reset"] {
   cursor: pointer;
-  -webkit-appearance: button;
   border: 0;
 }
 
@@ -463,7 +452,6 @@ label {
   width: 100%;
   height: 38px;
   color: #333;
-  vertical-align: middle;
   background-color: #fff;
   border: 1px solid #ccc;
   margin-bottom: 10px;
@@ -912,7 +900,6 @@ textarea.w-select {
   text-align: center;
   clear: both;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
   background: #ddd;
   position: relative;
 }
@@ -943,7 +930,6 @@ textarea.w-select {
   height: 40px;
   text-align: center;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
   margin: auto;
   padding-top: 10px;
   position: absolute;
@@ -1011,7 +997,6 @@ textarea.w-select {
   cursor: pointer;
   color: #fff;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -1395,7 +1380,6 @@ textarea.w-select {
   float: right;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -2119,7 +2103,6 @@ blockquote {
   z-index: 4;
   height: 100%;
   opacity: 1;
-  display: block;
   position: absolute;
   top: 0%;
   bottom: 0%;
@@ -2753,12 +2736,21 @@ blockquote {
   font-display: swap;
 }
 
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
 .contest-button.is--skip {
   display: none;
 }
 
 .contain.santar {
   transition: opacity 0.5s ease;
+  z-index: 1;
 }
 
 .quiz-section {
@@ -2767,11 +2759,21 @@ blockquote {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  z-index: 999999 !important;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.5s ease, visibility 0.5s;
+  pointer-events: auto !important;
+}
+
+.contrast,
+.curtains {
+  pointer-events: none;
+}
+
+.contain.santar[style*="opacity:0"] {
+  pointer-events: none !important;
 }
 
 .quiz-section.active {
@@ -2781,30 +2783,32 @@ blockquote {
 
 .quiz-section.active ~ .contain.santar {
   opacity: 0 !important;
+  display: none !important;
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
 
 .quiz-container {
   position: relative; 
-  background-image: url('/static/assets/images/quiz_page.png');
+  background-image: url('/static/assets/images/quiz_page.svg');
   background-size: cover;
   background-position: center;
   padding: 3rem;
   padding-top: 6rem;
   border-radius: 30px;
-  max-width: 700px;
-  width: 90%;
+  max-width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin-top: 60px;
 }
 
 .quiz-logo {
   position: absolute;
-  top: -180px; 
+  top: -230px; 
   z-index: 10; 
 }
 
