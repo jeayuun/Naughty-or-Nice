@@ -24333,19 +24333,6 @@ Webflow.require('ix2').init({
                       "value": "block"
                   }
               }, {
-                  "id": "a-8-n-18",
-                  "actionTypeId": "PLUGIN_LOTTIE",
-                  "config": {
-                      "delay": 500,
-                      "easing": "",
-                      "duration": 15000,
-                      "target": {
-                          "selector": ".santah__lottie-8",
-                          "selectorGuids": ["8e1a210f-2bcb-d4c0-c76d-80d517a50825"]
-                      },
-                      "value": 100
-                  }
-              }, {
                   "id": "a-8-n-14",
                   "actionTypeId": "GENERAL_DISPLAY",
                   "config": {
@@ -24915,21 +24902,6 @@ Webflow.require('ix2').init({
                           "useEventTarget": "SIBLINGS",
                           "selector": ".box__bottom",
                           "selectorGuids": ["a80619cd-6d39-2b31-7ebb-24ad2ab81a09"]
-                      },
-                      "value": 0,
-                      "unit": ""
-                  }
-              }, {
-                  "id": "a-10-n-18",
-                  "actionTypeId": "STYLE_OPACITY",
-                  "config": {
-                      "delay": 0,
-                      "easing": "",
-                      "duration": 1700,
-                      "target": {
-                          "useEventTarget": "SIBLINGS",
-                          "selector": ".santah__lottie-8",
-                          "selectorGuids": ["8e1a210f-2bcb-d4c0-c76d-80d517a50825"]
                       },
                       "value": 0,
                       "unit": ""

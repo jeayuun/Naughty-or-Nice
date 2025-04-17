@@ -649,32 +649,42 @@
     });
 
     function handleQuizFinish() {
+        // Immediately hide the quiz UI
+        quizSection.classList.remove('active');
+        quizSection.style.display = 'none';
 
-      // Immediately hide the quiz UI
-      quizSection.classList.remove('active');
-      quizSection.style.display = 'none';
+        // Reveal the Santar container
+        santarContainer.style.display = 'block';
+        santarContainer.style.opacity = '1';
+        santarContainer.style.pointerEvents = 'auto';
 
-      // Reveal the Santar container
-      santarContainer.style.display = 'block';
-      santarContainer.style.opacity = '1';
-      santarContainer.style.pointerEvents = 'auto';
+        // Reveal the fortune element
+        fortuneAnimation.style.display = 'block';
+        fortuneAnimation.style.opacity = '1';
 
-      // Reveal the fortune element
-      fortuneAnimation.style.display = 'block';
-      fortuneAnimation.style.opacity = '1';
+        // === MANUAL LOTTIE PLAY ===
+        // Create (or reuse) the Webflow Lottie instance for fortune animation and play it now
+        const fortuneInst = Webflow.require('lottie')
+          .createInstance(fortuneAnimation);
 
-      // === MANUAL LOTTIE PLAY ===
-      // Create (or reuse) the Webflow Lottie instance and play it now:
-      Webflow.require('lottie')
-        .createInstance(fortuneAnimation)
-        .play();
+        // When fortune animation completes, auto-play ticket slot animation (Lottie‑9)
+        fortuneInst.onPlaybackComplete(() => {
+          Webflow
+            .require('lottie')
+            .createInstance(ticketSlotAnimation) // Get Lottie‑9 instance
+            .play();                            // and play it
+        });
 
-      // After the 1.1s cookie-launch finishes, show Santar + play fortune
-      setTimeout(() => {
-        fortuneAudio.play();
-        isFortunePlaying = true;
-      }, 1100); // matches cookie animation duration
-    }
+        // Start the fortune animation
+        fortuneInst.play();
+
+        // Play the fortune audio after the 1.1s cookie-launch duration
+        setTimeout(() => {
+          fortuneAudio.play();
+          isFortunePlaying = true;
+        }, 1100); // Matches cookie animation duration
+      }
+
 
 
     // SLIDER
