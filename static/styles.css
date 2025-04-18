@@ -2796,7 +2796,7 @@ blockquote {
   padding: 3rem;
   padding-top: 6rem;
   border-radius: 30px;
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -2808,12 +2808,16 @@ blockquote {
 
 .quiz-logo {
   position: absolute;
-  top: -230px; 
+  top: -5px; 
   z-index: 10; 
 }
 
 .quiz-container img {
-  max-width: 150%;
+  max-width: 400px;
+}
+
+.quiz-content {
+  padding: 200px;
 }
 
 .quiz-question {
@@ -2861,7 +2865,7 @@ blockquote {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.quiz-finish {
+.quiz-finish, .quiz-next {
   background: none;
   border: none;
   padding: 0;
@@ -2870,19 +2874,28 @@ blockquote {
   margin: 0 auto;
 }
 
-.quiz-finish-img {
+.quiz-finish-img, .quiz-next-img {
   width: 150px;
   height: auto;
   transition: transform 0.2s ease;
 }
 
-.quiz-finish-img:hover {
+.quiz-finish-img:hover, .quiz-next-img:hover {
   transform: scale(1.05);
 }
 
-.quiz-finish {
+.quiz-finish, .quiz-next {
   background: transparent;
   color: inherit;
   border-radius: 0;
 }
+
+.quiz-buttons {
+  display: flex;          
+  justify-content: center;   
+  align-items: center;       
+  gap: 1rem;                
+  margin-top: 2rem;          
+}
+
 
