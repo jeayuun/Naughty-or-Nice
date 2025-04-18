@@ -2898,4 +2898,6 @@ blockquote {
   margin-top: 2rem;          
 }
 
-
+.quiz-question .question-number {
+  color: #fdac31;
+}

@@ -56,8 +56,8 @@ const finishBtn = document.getElementById('quiz-finish');
 
 function showQuestion(i) {
     const { q, options } = quizData[i];
-    questionEl.textContent = `${i + 1}. ${q}`;
-    optionsEl.innerHTML = '';  // clear previous options
+    questionEl.innerHTML = `<span class="question-number">${i + 1}.</span> ${q}`;
+    optionsEl.innerHTML = ''; 
 
     options.forEach(text => {
         const btn = document.createElement('button');
