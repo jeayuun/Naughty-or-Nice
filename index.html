@@ -361,11 +361,12 @@
         </div>
       </div>
 
-      <!-- SCORE SECTION -->
+      <!-- SCORE SECTION (WITH PLACEHOLDER DATA ONLY) -->
       <div class="score-section" style="display: none;">
         <div class="score-container">
           <img src="static/assets/images/score_page_logo.svg" alt="Score Logo" class="quiz-logo"/>
           <div class="score-content">
+
             <!-- Individual Score -->
             <div class="score-table">
               <div class="score-row header">
@@ -427,8 +428,9 @@
             </div>
             <!-- Total Score -->
             <div class="total-score" style="display: none;">
-              
+              <img src="static/assets/images/total_score.svg" alt="Total Score" class="total-score-page" style="max-width: 550px; margin-bottom: 25px;"/>
             </div>
+
             <div class="score-buttons">
               <button id="score-next" class="score-next" onclick="handleNextScore()" style="display: block;">
                 <img src="static/assets/images/next.png" alt="Next Score" class="quiz-next-img"/>
@@ -855,6 +857,10 @@
       santarContainer.style.pointerEvents = 'auto';
     }
   </script>
+  <script>
+    
+  </script>
+
   <script src="quiz.js" defer></script>
   <script src="score.js" defer></script>
     

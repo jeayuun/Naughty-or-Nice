@@ -15,6 +15,10 @@ body {
   cursor: url('/static/assets/images/cursor_pointer.png'), auto;
 }
 
+.long-press-cursor {
+  cursor: url('/static/assets/images/cursor_hold.png'), auto !important;
+}
+
 article,
 aside,
 details,
@@ -3018,4 +3022,19 @@ blockquote {
 
 .contain.santar {
   position: relative;
+}
+
+.total-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.total-score-page {
+  max-width: 550px;
+  width: 100%;
+  margin: 0 auto; 
+  display: block;
 }
