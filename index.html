@@ -326,12 +326,11 @@
                     Let's face it: you're the reason Santa has a naughty list. You know what you did.<br/>
                   </p>
                 </div>
-
-                <!-- View Goodness Score (WIP) -->
-                <div>
-                  
-                </div>
+                <button id="score-button" class="score-button" onclick="handleShowScore()">
+                  <img src="static/assets/images/score.png" alt="View Score" class="score-button__img"/>
+                </button>
               </div>
+            
             </div>
 
             <!-- Front Ticket -->
@@ -362,6 +361,85 @@
         </div>
       </div>
 
+      <!-- SCORE SECTION -->
+      <div class="score-section" style="display: none;">
+        <div class="score-container">
+          <img src="static/assets/images/score_page_logo.svg" alt="Score Logo" class="quiz-logo"/>
+          <div class="score-content">
+            <!-- Individual Score -->
+            <div class="score-table">
+              <div class="score-row header">
+                <span>Santar Asks</span>
+                <span>You Picked</span>
+                <span>% Nice</span>
+              </div>
+        
+              <div class="score-row">
+                <span class="question">What's your favorite Christmas movie?</span>
+                <span class="answer">Seven Sundays (2017)</span>
+                <span class="percentage">75%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">What's your go-to Christmas jam?</span>
+                <span class="answer">Star ng Pasko by ABS-CBN</span>
+                <span class="percentage">50%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">Your tree topper is...</span>
+                <span class="answer">A majestic star. Classic.</span>
+                <span class="percentage">100%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">Carolers arrive to your door. You...</span>
+                <span class="answer">Hide in the kitchen.</span>
+                <span class="percentage">50%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">What's your go-to Christmas jam?</span>
+                <span class="answer">Star ng Pasko by ABS-CBN</span>
+                <span class="percentage">50%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">Carolers arrive to your door. You...</span>
+                <span class="answer">Hide in the kitchen.</span>
+                <span class="percentage">50%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">What's your go-to Christmas jam?</span>
+                <span class="answer">Star ng Pasko by ABS-CBN</span>
+                <span class="percentage">50%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">Carolers arrive to your door. You...</span>
+                <span class="answer">Hide in the kitchen.</span>
+                <span class="percentage">50%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">What's your favorite Christmas movie?</span>
+                <span class="answer">Seven Sundays (2017)</span>
+                <span class="percentage">75%</span>
+              </div>
+              <div class="score-row">
+                <span class="question">What's your go-to Christmas jam?</span>
+                <span class="answer">Star ng Pasko by ABS-CBN</span>
+                <span class="percentage">50%</span>
+              </div>
+            </div>
+            <!-- Total Score -->
+            <div class="total-score" style="display: none;">
+              
+            </div>
+            <div class="score-buttons">
+              <button id="score-next" class="score-next" onclick="handleNextScore()" style="display: block;">
+                <img src="static/assets/images/next.png" alt="Next Score" class="quiz-next-img"/>
+              </button>
+              <button id="score-finish" class="score-finish" onclick="handleScoreFinish()" style="display: none;">
+                <img src="static/assets/images/finish.png" alt="Finish Score" class="quiz-finish-img"/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>      
     </div>
 
     <!-- Cute Cookie Token -->
@@ -598,6 +676,7 @@
     
     // PLAY COIN
     const quizSection = document.querySelector('.quiz-section');
+    const scoreSection = document.querySelector('.score-section');
     const santarContainer = document.querySelector('.contain.santar');
     const cookieLaunch = document.querySelector('.santah__lottie-7');
     const fortuneAnimation = document.querySelector('.santah__lottie-8');
@@ -714,12 +793,6 @@
 
     }
 
-
-
-
-
-    
-
     // Ticket
     var random = Math.floor(Math.random() * jQuery('.ticket__paragraph').length);
     var myFortune = jQuery('.ticket__paragraph').hide().eq(random);
@@ -731,8 +804,59 @@
       $('.ticket__naughty').css('display', 'block');
     }
 
+    // Score Section
+    const ticket = document.querySelector('.ticket');
+    const scoreTable = document.querySelector('.score-table');
+    const totalScore = document.querySelector('.total-score');
+    const scoreNextButton = document.getElementById('score-next');
+    const scoreFinishButton = document.getElementById('score-finish');
+    const ticketFront = document.querySelector('.ticket__front');
+    const ticketBack = document.querySelector('.ticket__back');
+    const ticketContain = document.querySelector('.ticket__contain');
+    
+    function handleShowScore() {
+      scoreSection.style.display = 'flex';
+      scoreSection.style.zIndex = '999999';
+
+      ticket.style.display = 'none';
+
+      santarContainer.style.display = 'none'; 
+      santarContainer.style.opacity = '0';
+      santarContainer.style.pointerEvents = 'none';
+
+      scoreTable.style.display = 'block';
+      totalScore.style.display = 'none';
+      scoreNextButton.style.display = 'block';
+      scoreFinishButton.style.display = 'none';
+    }
+
+    function handleNextScore() {
+      scoreTable.style.display = 'none';
+      totalScore.style.display = 'block';
+      
+      scoreNextButton.style.display = 'none';
+      scoreFinishButton.style.display = 'block';
+    }
+
+    function handleScoreFinish() {
+      scoreSection.style.display = 'none';
+      fortuneAnimation.style.display = 'none';
+
+      ticket.classList.add('ticket-visible');
+      ticket.style.display = 'block';
+      ticketFront.style.display = 'none';
+      ticketBack.style.display = 'block';
+
+      ticketContain.style.transform = 'none';
+      ticketContain.style.transformStyle = 'preserve-3d';
+      
+      santarContainer.style.display = 'block';
+      santarContainer.style.opacity = '1';
+      santarContainer.style.pointerEvents = 'auto';
+    }
   </script>
   <script src="quiz.js" defer></script>
+  <script src="score.js" defer></script>
     
   
 </body>
