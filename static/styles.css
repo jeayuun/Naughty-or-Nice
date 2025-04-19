@@ -2816,7 +2816,7 @@ blockquote {
   z-index: 10; 
 }
 
-.quiz-container img, .score-container img {
+.quiz-container img {
   max-width: 400px;
 }
 
@@ -2950,6 +2950,7 @@ blockquote {
   font-weight: 500;
   text-align: left;
   font-weight: bold;
+  margin-top: -30px;
 }
 
 .score-row {
@@ -3037,4 +3038,81 @@ blockquote {
   width: 100%;
   margin: 0 auto; 
   display: block;
+}
+
+
+/* Classification Badge Animation */
+.classification-badge {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+/* Total Score Styling */
+.score-category {
+  text-align: center;
+  margin-top: -295px;
+}
+
+.score-category img {
+  max-height: 45px;
+}
+
+.score-category-image {
+  margin: 0 auto;
+}
+
+.score-message {
+  color: #062324;
+  text-align: center;
+  font-size: 1.9vh;
+  margin: 1rem auto;
+  max-width: 600px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.progress-container {
+  width: 43%;
+  margin: 2.8rem auto;
+  position: relative;
+  z-index: 9999;
+}
+
+.progress-bar {
+  background: #d24342;
+  height: 32px;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  transition: width 1s ease-in-out;
+  background-color: #0b3d33;
+  border-radius: 30px;
+  margin-left: auto;  
+}
+
+.progress-percentage, #progress-left {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: youngserif, sans-serif;
+  margin-top: 1px;
+  position: absolute;
+  top: 0;
+}
+
+.progress-percentage {
+  color: #0b3d33;
+  right: -53px;
+}
+
+#progress-left {
+  color: #d24342;
+  left: -53px;
 }

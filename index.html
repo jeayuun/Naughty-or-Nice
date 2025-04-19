@@ -267,60 +267,54 @@
                   
                   <!-- For the Nice ones -->
                   <p class="ticket__paragraph is--nice">
-                    You supported local restaurants during the shutdown. Don't worry, Santah thinks your pandemic weight is sexy.
+                    You attended Simbang Gabi for tradition, brought your signature dish, AND harmonized during caroling? Santar's booking you for next year's Christmas special.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You muted your mic on that mid-virtual-meeting bathroom break. 2025 will be your year.
+                    Your playlist is fire, your potluck game is elite, and your OOTD sparkled. You're the human version of parol.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    Santah loves Christmas music, but thanks for waiting until after Thanksgiving to play Mariah Carey's All I Want for Christmas.
+                    You helped clean up after Noche Buena, believed in Santa wholeheartedly, and greeted everyone like a Hallmark movie lead. Iconic.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You shared 50% less food photos on Instagram. Santah smiles upon thee.
+                    You didn't just show up—you color-coordinated, brought the cocoa, and even sang along with the carolers. Santar's sending you a standing ovation (and a lechon).
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You put on actual pants during the pandemic. Even just once. Santah blesses you with good fortune in 2025.
+                    Your energy is “planned the whole party in Google Sheets.” And honestly? Santar wants you on his logistics team.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    Self love looks great on you. 200 likes on your next Insta selfie.
+                    You make lumpia, laugh at Tito jokes, and remind people what Christmas is really about: food, love, and good Wi-Fi.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    To some, sharing your Netflix password might be stealing, but Santah considers it generosity.
+                    Your Secret Santa gift made someone cry in a good way. Santar cried too.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You bought the mall Santa a latte. You're at the top of the nice list.<br/>
+                    Your New Year's resolution is actually achievable. Santar says: That's rare, bestie. Respect.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You resisted the urge to argue politics on Facebook. And you voted. Santah smiles upon thee.
-                  </p>
-                  <p class="ticket__paragraph is--nice">
-                    Your memes kept Santah laughing this year. Expect a happy and fun 2025.
-                  </p>
-                  <p class="ticket__paragraph is--nice">
-                    No deodorant during the pandemic was a bold move. But at least it kept people 6 feet away.
+                    You're the kind of person who freezes leftovers properly, wraps gifts with labels, and sings the second verse of “Pasko Na Naman” like a boss. Santar's MVP.
                   </p>
 
-                  <!-- For the naughty ones -->
+                  <!-- For the Naughty ones -->
                   <p class="ticket__paragraph">
                     Word on the street is that you watched the English dubbed version of Squid Game. 10lbs of reindeer droppings for you.
                   </p>
                   <p class="ticket__paragraph">
-                    This is for all the Facebook game requests you sent in 2010. I didn't forget.
+                    You brought vibes only to the potluck and ate like it was your last supper. Santar says: bring utensils next time.
                   </p>
                   <p class="ticket__paragraph">
-                    Heard you left out almond milk for Santa last year. Santah curses your good side on your christmas card.
+                    You panic-shopped at 11:59PM, forgot the gift tag, and called it “mysterious.” Santar's side-eye is strong.
                   </p>
                   <p class="ticket__paragraph">
-                    You had fast-food every day for a week. You're cursed to eat raw kale and cilantro smoothies for 7 days.
+                    You came for the Noche Buena, stayed for the karaoke, and broke the mic. Santar is sending the bill.
                   </p>
                   <p class="ticket__paragraph">
-                    You supported local restaurants during the shutdown. But did you leave a tip? Coal for you!
+                    Your New Year's resolution? “Chismis less.” But we both know that's a lie. Santar heard you on the group chat.
                   </p>
                   <p class="ticket__paragraph">
-                    Did your Wi-Fi <strong> <em> really </em> </strong> crash during that virtual meeting? Forget coal. Expect 10lbs of reindeer droppings.
+                    You brought store-bought spaghetti, said “I cooked this,” and made eye contact with Lola. Santar winced.
                   </p>
                   <p class="ticket__paragraph">
-                    You took a screenshot of your friend's NFT. Don't be surprised when your WiFi doesn't connect.
+                    You go to Simbang Gabi because your crush might be there. Santar said: flirty, not faithful.
                   </p>
                   <p class="ticket__paragraph">
                     Let's face it: you're the reason Santa has a naughty list. You know what you did.<br/>
@@ -364,7 +358,7 @@
       <!-- SCORE SECTION (WITH PLACEHOLDER DATA ONLY) -->
       <div class="score-section" style="display: none;">
         <div class="score-container">
-          <img src="static/assets/images/score_page_logo.svg" alt="Score Logo" class="quiz-logo"/>
+          <img src="static/assets/images/score_page_logo.svg" alt="Score Logo" class="quiz-logo" style="max-width: 400px;"/>
           <div class="score-content">
 
             <!-- Individual Score -->
@@ -428,14 +422,32 @@
             </div>
             <!-- Total Score -->
             <div class="total-score" style="display: none;">
-              <img src="static/assets/images/total_score.svg" alt="Total Score" class="total-score-page" style="max-width: 550px; margin-bottom: 25px;"/>
+              <img src="static/assets/images/total_score.svg"
+                    alt="Total Score"
+                    class="total-score-page"
+                    style="max-width: 550px; margin-bottom: 50px;"/>
+              <div class="score-category">
+                <img src="static/assets/images/result_nice.svg" alt="NICE" 
+                     class="score-category-image nice-image" style="display: none;">
+                <img src="static/assets/images/result_naughty.svg" alt="NAUGHTY" 
+                     class="score-category-image naughty-image" style="display: none;">
+              </div>
+              <p class="score-message montserrat"></p>
+              <div class="progress-container">
+                <div class="progress-bar">
+                  <div class="progress-fill"></div>
+                </div>
+                <div id="progress-left"></div> 
+                <div class="progress-percentage"></div>
+              </div>
             </div>
+            
 
             <div class="score-buttons">
               <button id="score-next" class="score-next" onclick="handleNextScore()" style="display: block;">
                 <img src="static/assets/images/next.png" alt="Next Score" class="quiz-next-img"/>
               </button>
-              <button id="score-finish" class="score-finish" onclick="handleScoreFinish()" style="display: none;">
+              <button id="score-finish" class="score-finish" onclick="handleScoreFinish()" style="display: none; margin-top: 3rem;">
                 <img src="static/assets/images/finish.png" alt="Finish Score" class="quiz-finish-img"/>
               </button>
             </div>
