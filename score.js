@@ -1,3 +1,8 @@
+// Individual Score Logic Here @David
+
+
+
+// Total Score Logic
 function handleNextScore() {
   let percentages = [];
   document.querySelectorAll('.percentage').forEach(item => {
@@ -28,7 +33,7 @@ function handleNextScore() {
                  Santar's side-eyeing your choices... but there's hope!`;
     }
   }
-  
+
   const remainingPercentage = 100 - totalScorePercentage;
   $('.progress-fill').css('width', `${totalScorePercentage}%`);
   $('.progress-percentage').text(`${totalScorePercentage}%`); 

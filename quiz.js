@@ -1,51 +1,52 @@
 // Pa-revise thankss
 const quizData = [
     {
-        q: "What's your go-to Christmas jam?",
-        options: [
-            "Mistletoe by Justin Bieber",
-            "Star ng Pasko by ABS-CBN",
-            "All I Want For Christmas Is You by Mariah Carey",
-            "Christmas in Our Hearts by Jose Mari Chan"
-        ]
+      q: "What's your go-to Christmas jam?",
+      options: [
+        "Mistletoe by Justin Bieber",
+        "Star ng Pasko by ABS-CBN",
+        "All I Want For Christmas Is You by Mariah Carey",
+        "Christmas in Our Hearts by Jose Mari Chan"
+      ]
     },
     {
-        q: "Which classic Christmas movie never gets old?",
-        options: [
-            "Home Alone",
-            "Elf",
-            "The Grinch",
-            "Love Actually"
-        ]
+      q: "How do you complete Simbang Gabi?",
+      options: [
+        "Sleep halfway through, then act like you prayed.",
+        "Buy a hot pandesal and pretend you're holy.",
+        "You only go because you have a crush on someone at the church.",
+        "Attend to keep up with family tradition."
+      ]
     },
     {
-        q: "Preferred holiday treat?",
-        options: [
-            "Gingerbread cookies",
-            "Candy canes",
-            "Fruitcake (no shame!)",
-            "Hot cocoa"
-        ]
+      q: "How do you usually celebrate Christmas Day?",
+      options: [
+        "Dodging Tita's “So, what's your plan after college?” question.",
+        "No Sleep 'Til Noche Buena.",
+        "Karaoke 'til the mic gives up!",
+        "Just a simple gathering with family and friends."
+      ]
     },
     {
-        q: "Ideal winter activity?",
-        options: [
-            "Building a snowman",
-            "Ice skating",
-            "Sitting by the fire",
-            "Holiday shopping"
-        ]
+      q: "What do you bring to the potluck?",
+      options: [
+        "The magic of being there.",
+        "Store-bought spaghetti, declared as “homemade.”",
+        "Lumpiang shanghai.",
+        "Your signature dish."
+      ]
     },
     {
-        q: "Which reindeer is your spirit animal?",
-        options: [
-            "Dasher",
-            "Prancer",
-            "Vixen",
-            "Rudolph"
-        ]
+      q: "What's your role during Noche Buena?",
+      options: [
+        "The official taste tester (aka pasimuno sa papakan).",
+        "The one who gets asked if you're still single.",
+        "The designated Spotify DJ.",
+        "The dishwasher after Noche Buena."
+      ]
     }
-];
+  ];
+
 
 let currentIndex = 0;
 
