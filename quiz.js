@@ -9,33 +9,33 @@ const quizData = [
         "Christmas in Our Hearts by Jose Mari Chan"
       ]
     },
-    {
-      q: "How do you complete Simbang Gabi?",
-      options: [
-        "Sleep halfway through, then act like you prayed.",
-        "Buy a hot pandesal and pretend you're holy.",
-        "You only go because you have a crush on someone at the church.",
-        "Attend to keep up with family tradition."
-      ]
-    },
-    {
-      q: "How do you usually celebrate Christmas Day?",
-      options: [
-        "Dodging Tita's “So, what's your plan after college?” question.",
-        "No Sleep 'Til Noche Buena.",
-        "Karaoke 'til the mic gives up!",
-        "Just a simple gathering with family and friends."
-      ]
-    },
-    {
-      q: "What do you bring to the potluck?",
-      options: [
-        "The magic of being there.",
-        "Store-bought spaghetti, declared as “homemade.”",
-        "Lumpiang shanghai.",
-        "Your signature dish."
-      ]
-    },
+    // {
+    //   q: "How do you complete Simbang Gabi?",
+    //   options: [
+    //     "Sleep halfway through, then act like you prayed.",
+    //     "Buy a hot pandesal and pretend you're holy.",
+    //     "You only go because you have a crush on someone at the church.",
+    //     "Attend to keep up with family tradition."
+    //   ]
+    // },
+    // {
+    //   q: "How do you usually celebrate Christmas Day?",
+    //   options: [
+    //     "Dodging Tita's “So, what's your plan after college?” question.",
+    //     "No Sleep 'Til Noche Buena.",
+    //     "Karaoke 'til the mic gives up!",
+    //     "Just a simple gathering with family and friends."
+    //   ]
+    // },
+    // {
+    //   q: "What do you bring to the potluck?",
+    //   options: [
+    //     "The magic of being there.",
+    //     "Store-bought spaghetti, declared as “homemade.”",
+    //     "Lumpiang shanghai.",
+    //     "Your signature dish."
+    //   ]
+    // },
     {
       q: "What's your role during Noche Buena?",
       options: [

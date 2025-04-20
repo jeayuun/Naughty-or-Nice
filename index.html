@@ -336,7 +336,7 @@
         </div>
       </div>
 
-      <!-- QUIZ SECTION HERE @David (WIP)-->
+      <!-- QUIZ SECTION HERE -->
       <div class="quiz-section" style="display: none;">
         <div class="quiz-container">
           <img src="/static/assets/images/quiz_page_logo.svg" alt="Quiz Logo" class="quiz-logo">
@@ -361,7 +361,7 @@
           <img src="static/assets/images/score_page_logo.svg" alt="Score Logo" class="quiz-logo" style="max-width: 400px;"/>
           <div class="score-content">
 
-            <!-- Individual Score (WITH PLACEHOLDER DATA ONLY, convert to JS) -->
+            <!-- Individual Score (WITH PLACEHOLDER DATA ONLY, convert to JS @David) -->
             <div class="score-table">
               <div class="score-row header">
                 <span>Santar Asks</span>
@@ -420,6 +420,7 @@
                 <span class="percentage">50%</span>
               </div>
             </div>
+
             <!-- Total Score -->
             <div class="total-score" style="display: none;">
               <img src="static/assets/images/total_score.svg"
@@ -441,8 +442,8 @@
                 <div class="progress-percentage"></div>
               </div>
             </div>
-            
 
+            <!-- Navigation Buttons -->
             <div class="score-buttons">
               <button id="score-next" class="score-next" onclick="handleNextScore()" style="display: block;">
                 <img src="static/assets/images/next.png" alt="Next Score" class="quiz-next-img"/>
@@ -539,7 +540,6 @@
           data-src="animations/milk_front.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b28">
         </div>
-        <!-- Cookie Launch should play AFTER Quiz -->
         <div class="santah__lottie-7" data-animation-type="lottie" data-autoplay="0" data-default-duration="1.1"
           data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
           data-renderer="svg"
@@ -562,7 +562,6 @@
     <div class="next" id="next"> </div>
   </div>
 
-  <!-- jQuery v3.5.1 included for DOM manipulation and event handling -->
   <script
     crossorigin="anonymous"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
