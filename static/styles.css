@@ -2112,6 +2112,7 @@ blockquote {
   bottom: 0%;
   left: 0%;
   right: 0%;
+  transition: opacity 1s ease;
 }
 
 .ticket {
@@ -3115,4 +3116,9 @@ blockquote {
 #progress-left {
   color: #d24342;
   left: -53px;
+}
+
+.santah__lottie-9,
+.take-text {
+  display: none;
 }
