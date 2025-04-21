@@ -14,28 +14,15 @@
   <link href="static/assets/images/appicon.png" rel="apple-touch-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body class="body">
   <div class="global" id="start">
     <div class="html w-embed">
       <style>
-        .ice,
-        .bottom,
-        .santah__lottie-3,
-        .santah__lottie-4,
-        .santah__lottie-5,
-        .santah__lottie-6,
-        .santah__lottie-7,
-        .santah__lottie-8,
-        .santah__lottie-9,
-        .curtains,
-        .contrast,
-        .santah__lottie-10,
-        .press-text,
-        .take-text {
+        .santah__lottie-3, .santah__lottie-4, .santah__lottie-5, .santah__lottie-6, .santah__lottie-7, .santah__lottie-8, .santah__lottie-9,        
+        .ice, .bottom, .curtains, .contrast, .santah__lottie-10, .press-text, .take-text {
           pointer-events: none;
         }
       </style>
@@ -100,8 +87,8 @@
             <br /><span style="color: red;">Are you <strong>naughty</strong> or <strong>nice</strong>?</span>
           </p>
         </div>
-
-        <div class="enter__gradient">
+        <!-- Skip Button -->
+        <div class="enter__gradient" style="transition: opacity 1s ease;">
           <a class="contest-button is--skip w-inline-block" href="#">
             <img alt="skip button" class="contest-button__img" loading="lazy" src="static/assets/images/skip.svg" />
           </a>
@@ -709,6 +696,24 @@
     const fortuneAudio = document.getElementById('fortune');
     let isFortunePlaying = false;
 
+    function showQuiz() {
+      quizSection.style.display = 'flex';
+      
+      const logo = document.querySelector('.quiz-logo');
+      logo.style.opacity = '1';
+      logo.style.transform = 'translateY(30px) rotate(-5deg)';
+
+      void quizSection.offsetWidth;
+      
+      quizSection.classList.add('active');
+      
+      setTimeout(() => {
+        logo.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        logo.style.opacity = '1';
+        logo.style.transform = 'translateY(0) rotate(0)';
+      }, 150);
+    }
+
     document.querySelector('.cookie__release').addEventListener('click', function () {
       coinAudio.play();
 
@@ -725,9 +730,7 @@
         document.querySelector('.contain.is--absolute').style.display = 'none';
         document.querySelector('.contain.is--absolute').style.pointerEvents = 'none';
 
-        quizSection.classList.add('active');
-        quizSection.style.display = 'flex';
-        quizSection.style.zIndex = '999999';
+        showQuiz();
 
         santarContainer.style.display = 'none';
         santarContainer.style.opacity = '0';
@@ -744,23 +747,24 @@
     });
 
     function handleQuizFinish() {
-      // Immediately hide the quiz UI
-      quizSection.classList.remove('active');
-      quizSection.style.display = 'none';
-
-      // Reveal the Santar container
-      santarContainer.style.display = 'block';
-      santarContainer.style.opacity = '1';
-      santarContainer.style.pointerEvents = 'auto';
-
-      fortuneAnimation.style.display = 'block';
-      fortuneAnimation.style.opacity = '1';
-
-      const fortuneInst = Webflow.require('lottie').createInstance(fortuneAnimation);
-
-      fortuneInst.play();
-      fortuneAudio.play();
-      isFortunePlaying = true;
+      quizSection.classList.add('exiting');
+      
+      setTimeout(() => {
+        quizSection.classList.remove('active');
+        quizSection.style.display = 'none';
+        quizSection.classList.remove('exiting');
+        
+        santarContainer.style.display = 'block';
+        santarContainer.style.opacity = '1';
+        santarContainer.style.pointerEvents = 'auto';
+        
+        fortuneAnimation.style.display = 'block';
+        fortuneAnimation.style.opacity = '1';
+        const fortuneInst = Webflow.require('lottie').createInstance(fortuneAnimation);
+        fortuneInst.play();
+        fortuneAudio.play();
+        isFortunePlaying = true;
+      }, 400);
     }
 
     fortuneAudio.addEventListener('play', () => {
@@ -834,6 +838,9 @@
     function handleShowScore() {
       scoreSection.style.display = 'flex';
       scoreSection.style.zIndex = '999999';
+      setTimeout(() => {
+        scoreSection.classList.add('active');
+      }, 50);
 
       ticket.style.display = 'none';
 
@@ -856,20 +863,24 @@
     }
 
     function handleScoreFinish() {
-      scoreSection.style.display = 'none';
-      fortuneAnimation.style.display = 'none';
+      scoreSection.classList.add('exiting');
 
-      ticket.classList.add('ticket-visible');
-      ticket.style.display = 'block';
-      ticketFront.style.display = 'none';
-      ticketBack.style.display = 'block';
+      setTimeout(() => {
+        scoreSection.style.display = 'none';
+        scoreSection.classList.remove('active', 'exiting');
+        fortuneAnimation.style.display = 'none';
 
-      ticketContain.style.transform = 'none';
-      ticketContain.style.transformStyle = 'preserve-3d';
-
-      santarContainer.style.display = 'block';
-      santarContainer.style.opacity = '1';
-      santarContainer.style.pointerEvents = 'auto';
+        ticket.classList.add('ticket-visible');
+        ticket.style.display = 'block';
+        ticketFront.style.display = 'none';
+        ticketBack.style.display = 'block';
+        ticketContain.style.transform = 'none';
+        ticketContain.style.transformStyle = 'preserve-3d';
+        
+        santarContainer.style.display = 'block';
+        santarContainer.style.opacity = '1';
+        santarContainer.style.pointerEvents = 'auto';
+      }, 400);
     }
   </script>
 
