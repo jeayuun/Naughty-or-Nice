@@ -1,4 +1,4 @@
-// Lacking the restart func to reset quiz 
+// Pa-revise thankss
 const quizData = [
   {
     q: "What's your go-to Christmas jam?",
@@ -218,10 +218,14 @@ function showQuestion(i) {
 }
 
 function handleNextQuestion() {
-  answers[currentIndex] = selectedValue;
-  currentIndex++;
-  showQuestion(currentIndex);
+  if (selectedValue !== null) {
+    answers[currentIndex] = selectedValue;
+    currentIndex++;
+    showQuestion(currentIndex);
+  }
 }
+
+nextBtn.addEventListener('click', handleNextQuestion);
 
 finishBtn.addEventListener('click', () => {
   if (selectedValue !== null) {
@@ -229,16 +233,9 @@ finishBtn.addEventListener('click', () => {
   }
 
   document.querySelector('.quiz-container').style.display = 'none';
-  document.querySelector('.score-section').style.display = 'block';
-
-  populateIndividualScores(quizData, answers); // ← Call this
+  handleNextScore(); // Triggers score rendering and total calculation
 });
 
-/* Restart Function */
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
-  showQuestion(currentIndex); // show quiz on load
+  showQuestion(0);
 });
