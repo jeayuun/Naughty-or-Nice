@@ -6,37 +6,23 @@
   <title>
     Are you Naughty or Nice? | COMP 016: Group 3 Midterm Project
   </title>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <link rel="stylesheet" href="static/styles.css" type="text/css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com"/>
-  <link href="static/assets/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
-  <link href="static/assets/images/appicon.png" rel="apple-touch-icon"/>
-
-  <script src="static/js/webfont.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    WebFont.load({ google: { families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"] } });
-  </script>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" href="static/styles.css" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com" />
+  <link href="static/assets/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="static/assets/images/appicon.png" rel="apple-touch-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body class="body">
   <div class="global" id="start">
     <div class="html w-embed">
       <style>
-        .ice,
-        .bottom,
-        .santah__lottie-3,
-        .santah__lottie-4,
-        .santah__lottie-5,
-        .santah__lottie-6,
-        .santah__lottie-7,
-        .santah__lottie-8,
-        .santah__lottie-9,
-        .curtains,
-        .contrast,
-        .santah__lottie-10,
-        .press-text,
-        .take-text {
+        .santah__lottie-3, .santah__lottie-4, .santah__lottie-5, .santah__lottie-6, .santah__lottie-7, .santah__lottie-8, .santah__lottie-9,        
+        .ice, .bottom, .curtains, .contrast, .santah__lottie-10, .press-text, .take-text {
           pointer-events: none;
         }
       </style>
@@ -46,34 +32,37 @@
   <!-- Audio Files -->
   <div class="audio w-embed">
     <audio id="music" loop="">
-      <source src="static/assets/audio/bgm.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/bgm.mp3" type="audio/mpeg" />
     </audio>
     <audio id="welcome">
-      <source src="static/assets/audio/ho-ho-ho_intro.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/ho-ho-ho_intro.mp3" type="audio/mpeg" />
     </audio>
     <audio id="power-up">
-      <source src="static/assets/audio/power_up.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/power_up.mp3" type="audio/mpeg" />
     </audio>
     <audio id="power-down">
-      <source src="static/assets/audio/power_down.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/power_down.mp3" type="audio/mpeg" />
     </audio>
     <audio id="waiting1">
-      <source src="static/assets/audio/waiting1.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/waiting1.mp3" type="audio/mpeg" />
     </audio>
     <audio id="waiting2">
-      <source src="static/assets/audio/waiting2.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/waiting2.mp3" type="audio/mpeg" />
     </audio>
     <audio id="cookie">
-      <source src="static/assets/audio/cookie_sfx.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/cookie_sfx.mp3" type="audio/mpeg" />
     </audio>
     <audio id="milk">
-      <source src="static/assets/audio/milk_sfx.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/milk_sfx.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="coin">
+      <source src="static/assets/audio/coin.mp3" type="audio/mpeg" />
     </audio>
     <audio id="fortune">
-      <source src="static/assets/audio/naughty_or_nice_outro.mp3" type="audio/mpeg"/>
+      <source src="static/assets/audio/naughty_or_nice_outro.mp3" type="audio/mpeg" />
     </audio>
   </div>
-  
+
   <!-- Landing Page -->
   <div class="wrap">
     <div class="contrast">
@@ -83,49 +72,57 @@
 
         <!-- Game Rules Dialogue -->
         <div class="enter__2-contain">
-          <p class="enter__story">
-            For centuries, curious historians have traveled the world, desperately seeking the true Legend of <span style="color: red;">Santah</span>.<br/>
-            <br/>Folklore has it, he's Santa's not-so-jolly twin with a nasty eggnog habit, banished for selling black market toys on Amazon.<br/>
-            <br/>We may never know of the curse that turned Santah into his present state as the mechanical, coin-eating medium of holiday fortunes.<br/>
-            <br/>Now, Santah holds the power. The fate of whether you're <strong>naughty</strong> or <strong>nice</strong> is in his hands.<br/>
-            <br/>To uncover the truth, you must answer <span style="color: red;">20 questions</span>—your every response revealing more about your heart. But beware, Santah doesn't take kindly to mischief. Your choices will determine if you've earned a spot on the nice list… or if you're doomed to his darker whims.<br/>
-            <br/><span style="color: red;">Are you <strong>naughty</strong> or <strong>nice</strong>?</span>
+          <p class="enter__story montserrat">
+            For centuries, curious historians have traveled the world, desperately seeking the true Legend of <span
+              style="color: red;">Santar</span>.<br />
+            <br />Folklore has it, he's Santa's not-so-jolly twin with a nasty eggnog habit, banished for selling black
+            market toys on Amazon.<br />
+            <br />We may never know of the curse that turned Santar into his present state as the mechanical,
+            coin-eating medium of holiday fortunes.<br />
+            <br />Now, Santar holds the power. The fate of whether you're <strong>naughty</strong> or
+            <strong>nice</strong> is in his hands.<br />
+            <br />To uncover the truth, you must answer <span style="color: red;">20 questions</span>—your every
+            response revealing more about your heart. But beware, Santar doesn't take kindly to mischief. Your choices
+            will determine if you've earned a spot on the nice list… or if you're doomed to his darker whims.<br />
+            <br /><span style="color: red;">Are you <strong>naughty</strong> or <strong>nice</strong>?</span>
           </p>
         </div>
-
-        <div class="enter__gradient">
+        <!-- Skip Button -->
+        <div class="enter__gradient" style="transition: opacity 1s ease;">
           <a class="contest-button is--skip w-inline-block" href="#">
-            <img alt="skip button" class="contest-button__img" loading="lazy" src="static/assets/images/skip.svg"/>
+            <img alt="skip button" class="contest-button__img" loading="lazy" src="static/assets/images/skip.svg" />
           </a>
         </div>
       </div>
 
       <div class="enter__top">
-        <img alt="christmas lights decor" class="enter__lights" loading="lazy" src="static/assets/images/lights.svg"/>
+        <img alt="christmas lights decor" class="enter__lights" loading="lazy" src="static/assets/images/lights.svg" />
       </div>
 
       <div class="enter__middle">
-        <img alt="group logo presents" class="tse__logo" loading="lazy" src="static/assets/images/group3.png"/>
-        <img alt="quiz logo" class="enter__logo" loading="lazy" src="static/assets/images/quiz_logo.png"/>
+        <img alt="group logo presents" class="tse__logo" loading="lazy" src="static/assets/images/group3.png" />
+        <img alt="quiz logo" class="enter__logo" loading="lazy" src="static/assets/images/quiz_logo.png" />
         <a class="enter__button w-inline-block" href="#start">
-          <img alt="start quiz button" class="enter__button-img" loading="lazy" src="static/assets/images/begin.svg"/>
+          <img alt="start quiz button" class="enter__button-img" loading="lazy" src="static/assets/images/begin.svg" />
         </a>
         <div class="enter__sound-line">
-          <img alt="sound icon left" class="enter__sound-icon" loading="lazy" src="static/assets/images/sound_left.svg"/>
+          <img alt="sound icon left" class="enter__sound-icon" loading="lazy"
+            src="static/assets/images/sound_left.svg" />
           <p class="enter__sound">
             BEST EXPERIENCED WITH SOUND
           </p>
-          <img alt="sound icon right" class="enter__sound-icon" loading="lazy" src="static/assets/images/sound_right.svg"/>
+          <img alt="sound icon right" class="enter__sound-icon" loading="lazy"
+            src="static/assets/images/sound_right.svg" />
         </div>
         <p class="enter__sound is--credit">
-          COMP 016: Web Development | Group 3: Midterm Project Submission
+          COMP 016: Web Development | Midterm Project Submission
         </p>
       </div>
       <div class="enter__bottom">
       </div>
     </div>
 
-    <!-- Quiz Page -->
+    <!-- Main Page -->
     <div class="overflow" style="filter:blur(0px)">
 
       <!-- Background -->
@@ -133,56 +130,60 @@
       </div>
       <div class="ice">
         <div class="ice__left">
-          <img alt="icicle_left" class="left" loading="lazy" src="static/assets/images/icicle_left.png"/>
+          <img alt="icicle_left" class="left" loading="lazy" src="static/assets/images/icicle_left.png" />
         </div>
         <div class="contain is--other">
         </div>
         <div class="ice__right">
-          <img alt="icicle_right" class="right" loading="lazy" sizes="(max-width: 991px) 100vw, 1406.7890625px" src="static/assets/images/icicle_right.png"/>
+          <img alt="icicle_right" class="right" loading="lazy" sizes="(max-width: 991px) 100vw, 1406.7890625px"
+            src="static/assets/images/icicle_right.png" />
         </div>
       </div>
 
-      <!-- Santah Animation -->
-      <div class="contain" style="opacity:0">
+      <!-- Santar Animations -->
+      <div class="contain santar" style="opacity: 0">
         <div class="border">
         </div>
         <div class="border is--alt">
         </div>
         <div class="lottie-height">
+          <!-- Power Up Scene -->
           <div class="santah__lottie" data-animation-type="lottie" data-autoplay="0"
             data-default-duration="1.4666666666666666" data-direction="1" data-duration="0" data-is-ix2-target="1"
-            data-ix2-initial-state="0" data-loop="0" data-renderer="svg"
-            data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fe05187083cee43c930df07_new-Santar_Scene_Power%20Up.json"
+            data-ix2-initial-state="0" data-loop="0" data-renderer="svg" data-src="animations/power_up_scene.json"
             data-w-id="3981751c-7ee8-02f5-225f-a0786ca9271f">
           </div>
+          <!-- Welcome Scene / Intro Animation -->
           <div class="santah__lottie-2" data-animation-type="lottie" data-autoplay="0" data-default-duration="11.4"
             data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
-            data-renderer="svg"
-            data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fe05187881adb4a17e07321_new-Santar_Scene_Ho%20Ho%20Ho.json"
+            data-renderer="svg" data-src="animations/ho-ho-ho_intro.json"
             data-w-id="739f4c6e-7554-ce61-5355-ddbefd96b2bf">
           </div>
+          <!-- Fortune Animation -->
           <div class="santah__lottie-8" data-animation-type="lottie" data-autoplay="0" data-default-duration="14.9"
             data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
-            data-renderer="svg"
-            data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fe05187207d750c7ade5f4a_new-Santar_Scene_Fortune.json"
+            data-renderer="svg" data-src="animations/fortune_scene.json"
             data-w-id="a3724e63-ca75-b35f-9670-1c6337a732cf">
           </div>
+          <!-- Ticket Slot Animation -->
           <div class="santah__lottie-9" data-animation-type="lottie" data-autoplay="0"
             data-default-duration="1.735068331064288" data-direction="1" data-duration="0" data-is-ix2-target="1"
-            data-ix2-initial-state="0" data-loop="0" data-renderer="svg"
-            data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fe04012048e93703451a426_Slot%20%3A%20Ticket_Gradient%20Fix.json"
+            data-ix2-initial-state="0" data-loop="0" data-renderer="svg" data-src="animations/ticket_slot.json"
             data-w-id="7f7c8ce8-4c8a-6267-2854-219ab057fb3f">
           </div>
+          <!-- Front Ticket Animation -->
           <div class="santah__lottie-10" data-animation-type="lottie" data-autoplay="0" data-default-duration="2.2"
             data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
-            data-renderer="svg"
-            data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fe13d4bf6b5a35d8e9a660c_Vector%20Ticket.json"
+            data-renderer="svg" data-src="animations/front_ticket.json"
             data-w-id="34b70451-554d-3266-f75c-42c283e36275">
           </div>
+
           <a class="grab-ticket w-inline-block" href="#">
           </a>
+
           <div class="box__bottom">
             <div class="box__bottom-contain">
+              <!-- Press Button to Power Up Santah -->
               <div class="button__contain">
                 <div class="tricks-press">
                   <p class="tricks-number">
@@ -190,40 +191,41 @@
                   </p>
                   <div class="tricks-press__loop" data-animation-type="lottie" data-autoplay="1"
                     data-default-duration="3.566666666666667" data-direction="1" data-duration="0"
-                    data-is-ix2-target="0" data-loop="1" data-renderer="svg"
-                    data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fd9ea401ea53529eed446c4_Button_Loop.json"
+                    data-is-ix2-target="0" data-loop="1" data-renderer="svg" data-src="animations/red_button.json"
                     data-w-id="96de27e4-f177-9b82-03fc-7efafdc7ca19">
                   </div>
                   <div class="tricks-press__press" data-animation-type="lottie" data-autoplay="0"
                     data-default-duration="2.066666666666667" data-direction="1" data-duration="0"
                     data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0" data-renderer="svg"
-                    data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fd9fa54f61237dd624b57ea_Button_Press_V2.json"
-                    data-w-id="f4e829e4-5681-63c5-e3f9-01a24876b593">
+                    data-src="animations/red_button_press.json" data-w-id="f4e829e4-5681-63c5-e3f9-01a24876b593">
                   </div>
                   <div class="tricks-press__final">
                   </div>
                 </div>
               </div>
+
               <div class="press-text" style="opacity:1">
                 <div class="press-text__wrap">
                   <h6 class="press-text__words">
                     Press &amp; Hold
                   </h6>
-                  <img alt="Side Arrows border" class="press-text_arrows" loading="lazy" src="static/assets/images/side_arrows.svg"/>
+                  <img alt="Side Arrows border" class="press-text_arrows" loading="lazy"
+                    src="static/assets/images/side_arrows.svg" />
                 </div>
               </div>
               <div class="take-text">
                 <div class="press-text__wrap">
-                  <img alt="Up Arrows border" class="press-text_arrows2" loading="lazy" src="static/assets/images/up_arrows.svg"/>
+                  <img alt="Up Arrows border" class="press-text_arrows2" loading="lazy"
+                    src="static/assets/images/up_arrows.svg" />
                   <h6 class="press-text__words">
                     Take Fortune
                   </h6>
                 </div>
               </div>
+              <!-- Speaker -->
               <div class="speaker" data-animation-type="lottie" data-autoplay="1"
                 data-default-duration="0.03333333333333333" data-direction="1" data-duration="0" data-is-ix2-target="0"
-                data-loop="0" data-renderer="svg"
-                data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fdfd406162137054d6214d7_Speaker.json"
+                data-loop="0" data-renderer="svg" data-src="animations/speaker.json"
                 data-w-id="420bb389-bd88-de0b-e62f-d7d9d74e6114">
               </div>
             </div>
@@ -234,92 +236,176 @@
         <div class="ticket" style="display:none">
           <div class="ticket__contain">
             <a aria-current="page" class="ticket__retry w-inline-block w--current" href="/">
-              <img alt="refresh link" class="ticket__retry-icon" loading="lazy" src="static/assets/images/refresh.svg"/>
+              <img alt="refresh link" class="ticket__retry-icon" loading="lazy"
+                src="static/assets/images/refresh.svg" />
               <h6 class="ticket__retry-text">
                 Retake Quiz
               </h6>
             </a>
             <div class="ticket__back">
-              <img alt="ticket (back part)" class="ticket__img" loading="lazy" src="static/assets/images/ticket_back.png"/>
+              <img alt="ticket (back part)" class="ticket__img" loading="lazy"
+                src="static/assets/images/ticket_back.png" />
               <div class="ticket__content">
 
                 <!-- Naughty or Nice? -->
                 <div class="ticket__head">
-                  <img alt="NICE" class="ticket__nice" loading="lazy" src="static/assets/images/result_nice.svg"/>
-                  <img alt="NAUGHTY" class="ticket__naughty" loading="lazy" src="static/assets/images/result_naughty.svg"/>
+                  <img alt="NICE" class="ticket__nice" loading="lazy" src="static/assets/images/result_nice.svg" />
+                  <img alt="NAUGHTY" class="ticket__naughty" loading="lazy"
+                    src="static/assets/images/result_naughty.svg" />
                 </div>
 
                 <!-- Cute Trivia -->
                 <div class="ticket__paragraphs">
-                  
+
                   <!-- For the Nice ones -->
                   <p class="ticket__paragraph is--nice">
-                    You supported local restaurants during the shutdown. Don't worry, Santah thinks your pandemic weight is sexy.
+                    You attended Simbang Gabi for tradition, brought your signature dish, AND harmonized during
+                    caroling? Santar's booking you for next year's Christmas special.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You muted your mic on that mid-virtual-meeting bathroom break. 2025 will be your year.
+                    Your playlist is fire, your potluck game is elite, and your OOTD sparkled. You're the human version
+                    of parol.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    Santah loves Christmas music, but thanks for waiting until after Thanksgiving to play Mariah Carey's All I Want for Christmas.
+                    You helped clean up after Noche Buena, believed in Santa wholeheartedly, and greeted everyone like a
+                    Hallmark movie lead. Iconic.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You shared 50% less food photos on Instagram. Santah smiles upon thee.
+                    You didn't just show up—you color-coordinated, brought the cocoa, and even sang along with the
+                    carolers. Santar's sending you a standing ovation (and a lechon).
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You put on actual pants during the pandemic. Even just once. Santah blesses you with good fortune in 2025.
+                    Your energy is “planned the whole party in Google Sheets.” And honestly? Santar wants you on his
+                    logistics team.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    Self love looks great on you. 200 likes on your next Insta selfie.
+                    You make lumpia, laugh at Tito jokes, and remind people what Christmas is really about: food, love,
+                    and good Wi-Fi.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    To some, sharing your Netflix password might be stealing, but Santah considers it generosity.
+                    Your Secret Santa gift made someone cry in a good way. Santar cried too.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You bought the mall Santa a latte. You're at the top of the nice list.<br/>
+                    Your New Year's resolution is actually achievable. Santar says: That's rare, bestie. Respect.
                   </p>
                   <p class="ticket__paragraph is--nice">
-                    You resisted the urge to argue politics on Facebook. And you voted. Santah smiles upon thee.
-                  </p>
-                  <p class="ticket__paragraph is--nice">
-                    Your memes kept Santah laughing this year. Expect a happy and fun 2025.
-                  </p>
-                  <p class="ticket__paragraph is--nice">
-                    No deodorant during the pandemic was a bold move. But at least it kept people 6 feet away.
+                    You're the kind of person who freezes leftovers properly, wraps gifts with labels, and sings the
+                    second verse of “Pasko Na Naman” like a boss. Santar's MVP.
                   </p>
 
-                  <!-- For the naughty ones -->
+                  <!-- For the Naughty ones -->
                   <p class="ticket__paragraph">
-                    Word on the street is that you watched the English dubbed version of Squid Game. 10lbs of reindeer droppings for you.
+                    Word on the street is that you watched the English dubbed version of Squid Game. 10lbs of reindeer
+                    droppings for you.
                   </p>
                   <p class="ticket__paragraph">
-                    This is for all the Facebook game requests you sent in 2010. I didn't forget.
+                    You brought vibes only to the potluck and ate like it was your last supper. Santar says: bring
+                    utensils next time.
                   </p>
                   <p class="ticket__paragraph">
-                    Heard you left out almond milk for Santa last year. Santah curses your good side on your christmas card.
+                    You panic-shopped at 11:59PM, forgot the gift tag, and called it “mysterious.” Santar's side-eye is
+                    strong.
                   </p>
                   <p class="ticket__paragraph">
-                    You had fast-food every day for a week. You're cursed to eat raw kale and cilantro smoothies for 7 days.
+                    You came for the Noche Buena, stayed for the karaoke, and broke the mic. Santar is sending the bill.
                   </p>
                   <p class="ticket__paragraph">
-                    You supported local restaurants during the shutdown. But did you leave a tip? Coal for you!
+                    Your New Year's resolution? “Chismis less.” But we both know that's a lie. Santar heard you on the
+                    group chat.
                   </p>
                   <p class="ticket__paragraph">
-                    Did your Wi-Fi <strong> <em> really </em> </strong> crash during that virtual meeting? Forget coal. Expect 10lbs of reindeer droppings.
+                    You brought store-bought spaghetti, said “I cooked this,” and made eye contact with Lola. Santar
+                    winced.
                   </p>
                   <p class="ticket__paragraph">
-                    You took a screenshot of your friend's NFT. Don't be surprised when your WiFi doesn't connect.
+                    You go to Simbang Gabi because your crush might be there. Santar said: flirty, not faithful.
                   </p>
                   <p class="ticket__paragraph">
-                    Let's face it: you're the reason Santa has a naughty list. You know what you did.<br/>
+                    Let's face it: you're the reason Santa has a naughty list. You know what you did.<br />
                   </p>
                 </div>
+                <button id="score-button" class="score-button" onclick="handleShowScore()">
+                  <img src="static/assets/images/score.png" alt="View Score" class="score-button__img" />
+                </button>
               </div>
+
             </div>
 
             <!-- Front Ticket -->
             <div class="ticket__front"
               style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0deg) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0deg) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0deg) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0deg) rotateZ(0) skew(0, 0);transform-style:preserve-3d">
-              <img alt="" class="ticket__img" loading="lazy" src="static/assets/images/ticket_front.png"/>
+              <img alt="" class="ticket__img" loading="lazy" src="static/assets/images/ticket_front.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUIZ SECTION HERE -->
+      <div class="quiz-section" style="display: none;">
+        <div class="quiz-container">
+          <img src="/static/assets/images/quiz_page_logo.svg" alt="Quiz Logo" class="quiz-logo">
+          <div class="quiz-content">
+            <p class="quiz-question"></p>
+            <div class="quiz-options"></div>
+            <div class="quiz-buttons">
+              <button id="quiz-next" class="quiz-next" onclick="handleNextQuestion()">
+                <img src="static/assets/images/next.png" alt="Next Question" class="quiz-next-img" />
+              </button>
+              <button id="quiz-finish" class="quiz-finish" onclick="handleQuizFinish()">
+                <img src="static/assets/images/finish.png" alt="Finish Quiz" class="quiz-finish-img" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCORE SECTION-->
+      <div class="score-section" style="display: none;">
+        <div class="score-container">
+          <img src="static/assets/images/score_page_logo.svg" alt="Score Logo" class="quiz-logo"
+            style="max-width: 400px;" />
+          <div class="score-content">
+
+            <!-- Individual Score (WITH PLACEHOLDER DATA ONLY, convert to JS @David) -->
+            <div class="score-table">
+              <div class="score-row header">
+                <span>Santar Asks</span>
+                <span>You Picked</span>
+                <span>% Nice</span>
+              </div>
+
+              <div class="score-row"></div>
+            </div>
+
+            <!-- Total Score -->
+            <div class="total-score" style="display: none;">
+              <img src="static/assets/images/total_score.svg" alt="Total Score" class="total-score-page"
+                style="max-width: 550px; margin-bottom: 50px;" />
+              <div class="score-category">
+                <img src="static/assets/images/result_nice.svg" alt="NICE" class="score-category-image nice-image"
+                  style="display: none;">
+                <img src="static/assets/images/result_naughty.svg" alt="NAUGHTY"
+                  class="score-category-image naughty-image" style="display: none;">
+              </div>
+              <p class="score-message montserrat"></p>
+              <div class="progress-container">
+                <div class="progress-bar">
+                  <div class="progress-fill"></div>
+                </div>
+                <div id="progress-left"></div>
+                <div class="progress-percentage"></div>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="score-buttons">
+              <button id="score-next" class="score-next" onclick="handleNextScore()" style="display: block;">
+                <img src="static/assets/images/next.png" alt="Next Score" class="quiz-next-img" />
+              </button>
+              <button id="score-finish" class="score-finish" onclick="handleScoreFinish()"
+                style="display: none; margin-top: 3rem;">
+                <img src="static/assets/images/finish.png" alt="Finish Score" class="quiz-finish-img" />
+              </button>
             </div>
           </div>
         </div>
@@ -335,7 +421,7 @@
               You Found A
             </h6>
             <h2 class="is--cookie-bottom" style="opacity:0">
-              Santah
+              Santar
               <br />
               Token!
             </h2>
@@ -387,39 +473,34 @@
         </div>
         <div class="santah__lottie-3" data-animation-type="lottie" data-autoplay="0"
           data-default-duration="3.1333333333333333" data-direction="1" data-duration="0" data-is-ix2-target="1"
-          data-ix2-initial-state="0" data-loop="0" data-renderer="svg"
-          data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fdbc19553f841c0662b3cb5_Cookie%20%2B%20Line%3ADot.json"
+          data-ix2-initial-state="0" data-loop="0" data-renderer="svg" data-src="animations/cookie_line.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b24">
         </div>
         <div class="santah__lottie-4" data-animation-type="lottie" data-autoplay="1"
           data-default-duration="2.2333333333333334" data-direction="1" data-duration="0" data-is-ix2-target="0"
-          data-loop="1" data-renderer="svg"
-          data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fe02a9ce66c080e2d68078a_Milk%20Back.json"
+          data-loop="1" data-renderer="svg" data-src="animations/milk_back.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b25">
         </div>
         <div class="santah__lottie-5" data-animation-type="lottie" data-autoplay="0"
           data-default-duration="1.7666666666666666" data-direction="1" data-duration="0" data-is-ix2-target="1"
-          data-loop="0" data-renderer="svg"
-          data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fdbc1956fbe9f221e28afe1_Cookie%20Drag.json"
+          data-loop="0" data-renderer="svg" data-src="animations/cookie_drag.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b26">
-        </div>
-        <div class="santah__lottie-7" data-animation-type="lottie" data-autoplay="0" data-default-duration="1.1"
-          data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
-          data-renderer="svg"
-          data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fdbc19529d99f7b1d3d01f0_Cookie%20Launch.json"
-          data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b27">
         </div>
         <div class="santah__lottie-6" data-animation-type="lottie" data-autoplay="1"
           data-default-duration="2.2333333333333334" data-direction="1" data-duration="0" data-is-ix2-target="0"
-          data-loop="1" data-renderer="svg"
-          data-src="https://cdn.prod.website-files.com/5fd910abd289182f31333dd7/5fe02a9c43589fd75f88f7f0_Milk%20Front.json"
+          data-loop="1" data-renderer="svg" data-src="animations/milk_front.json"
           data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b28">
+        </div>
+        <div class="santah__lottie-7" data-animation-type="lottie" data-autoplay="0" data-default-duration="1.1"
+          data-direction="1" data-duration="0" data-is-ix2-target="1" data-ix2-initial-state="0" data-loop="0"
+          data-renderer="svg" data-src="animations/cookie_launch.json" data-w-id="ba428a73-8f46-0a95-4ddb-f59e7d692b27">
         </div>
       </div>
     </div>
 
     <div class="bottom" style="filter:blur(0px)">
-      <img alt="Icicle Bottom Part" class="bottom__img" loading="lazy" sizes="(max-width: 991px) 100vw, 4496.1171875px" src="static/assets/images/icicle_bottom.png"/>
+      <img alt="Icicle Bottom Part" class="bottom__img" loading="lazy" sizes="(max-width: 991px) 100vw, 4496.1171875px"
+        src="static/assets/images/icicle_bottom.png" />
     </div>
   </div>
 
@@ -431,13 +512,9 @@
     <div class="next" id="next"> </div>
   </div>
 
-  <!-- jQuery v3.5.1 included for DOM manipulation and event handling -->
-  <script
-    crossorigin="anonymous"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    src="static/js/jquery-3.5.1.min.js"
-    type="text/javascript">
-  </script>
+  <script crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    src="static/js/jquery-3.5.1.min.js" type="text/javascript">
+    </script>
 
   <script src="static/js/app.js" type="module">
   </script>
@@ -451,6 +528,7 @@
     var waiting2 = document.getElementById('waiting2');
     var cookie = document.getElementById('cookie');
     var milk = document.getElementById('milk');
+    var coin = document.getElementById('coin');
     var fortune = document.getElementById('fortune');
     music.load();
 
@@ -458,7 +536,7 @@
     function waitingHold() {
       waitingFunction = window.setTimeout(function () {
         document.getElementById('waiting1').play();
-      }, 47000);
+      }, 30000);
     }
     function stopWaiting() {
       clearTimeout(waitingFunction);
@@ -468,11 +546,20 @@
     function waitingHold2() {
       waitingFunction2 = window.setTimeout(function () {
         document.getElementById('waiting2').play();
-      }, 67000);
+      }, 45000);
     }
     function stopWaiting2() {
       clearTimeout(waitingFunction2);
     }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        var skipButton = document.querySelector('.contest-button.is--skip');
+        if (skipButton) {
+          skipButton.style.display = 'block';
+        }
+      }, 5000);
+    });
 
     // Cue up all audio and BEGIN EXPERIENCE
     $(".enter__button").click(function () {
@@ -490,24 +577,6 @@
       cookie.load();
       milk.load();
       fortune.load();
-    });
-
-    // PLAY FORTUNE
-    $(".cookie__release").click(function () {
-
-      setTimeout(() => {
-        fortune.play();
-      }, 500);
-
-    });
-
-    // PLAY COIN
-    $(".tricks-press__final").click(function () {
-
-      setTimeout(() => {
-        cookie.play();
-      }, 11500);
-
     });
 
     // PRESS AND HOLD
@@ -529,10 +598,12 @@
 
       }, tricksTime);
     }
+
     function stopTricksLinkPage2() {
       clearTimeout(tricksNewPage);
     }
 
+    // Power Up Scene
     $('.tricks-press').bind('touchstart mousedown', function (e) {
       waiting1.pause();
       waiting2.pause();
@@ -555,19 +626,130 @@
       powerUp.currentTime = 0;
     });
 
+    $(".tricks-press__final").click(function () {
+
+      setTimeout(() => {
+        cookie.play();
+      }, 11500);
+
+    });
+
+    // PLAY COIN
+    const quizSection = document.querySelector('.quiz-section');
+    const scoreSection = document.querySelector('.score-section');
+    const santarContainer = document.querySelector('.contain.santar');
+    const cookieLaunch = document.querySelector('.santah__lottie-7');
+    const fortuneAnimation = document.querySelector('.santah__lottie-8');
+    const ticketSlotAnimation = document.querySelector('.santah__lottie-9'); 
+    const grabTicket = document.querySelector('.grab-ticket');
+    const takeTextEl = document.querySelector('.take-text');
+    const coinAudio = document.getElementById('coin');
+    const fortuneAudio = document.getElementById('fortune');
+    let isFortunePlaying = false;
+
+    function showQuiz() {
+      quizSection.style.display = 'flex';
+      
+      const logo = document.querySelector('.quiz-logo');
+      logo.style.opacity = '1';
+      logo.style.transform = 'translateY(30px) rotate(-5deg)';
+
+      void quizSection.offsetWidth;
+      
+      quizSection.classList.add('active');
+      
+      setTimeout(() => {
+        logo.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        logo.style.opacity = '1';
+        logo.style.transform = 'translateY(0) rotate(0)';
+      }, 150);
+    }
+
+    document.querySelector('.cookie__release').addEventListener('click', function () {
+      coinAudio.play();
+
+      cookieLaunch.style.display = 'block';
+      cookieLaunch.setAttribute('data-autoplay', '1'); 
+
+      void cookieLaunch.offsetWidth; 
+
+      setTimeout(() => {
+        cookieLaunch.style.display = 'none';
+        cookieLaunch.setAttribute('data-autoplay', '0');
+        cookieLaunch.currentTime = 0; 
+
+        document.querySelector('.contain.is--absolute').style.display = 'none';
+        document.querySelector('.contain.is--absolute').style.pointerEvents = 'none';
+
+        showQuiz();
+
+        santarContainer.style.display = 'none';
+        santarContainer.style.opacity = '0';
+        santarContainer.style.pointerEvents = 'none';
+
+        fortuneAnimation.style.display = 'none';
+        fortuneAnimation.style.opacity = '0';
+        fortuneAnimation.setAttribute('data-autoplay', '0'); 
+        fortuneAnimation.pause();
+        fortuneAnimation.currentTime = 0;
+
+        void quizSection.offsetWidth;
+      }, 1100); 
+    });
+
+    function handleQuizFinish() {
+      quizSection.classList.add('exiting');
+      
+      setTimeout(() => {
+        quizSection.classList.remove('active');
+        quizSection.style.display = 'none';
+        quizSection.classList.remove('exiting');
+        
+        santarContainer.style.display = 'block';
+        santarContainer.style.opacity = '1';
+        santarContainer.style.pointerEvents = 'auto';
+        
+        fortuneAnimation.style.display = 'block';
+        fortuneAnimation.style.opacity = '1';
+        const fortuneInst = Webflow.require('lottie').createInstance(fortuneAnimation);
+        fortuneInst.play();
+        fortuneAudio.play();
+        isFortunePlaying = true;
+      }, 400);
+    }
+
+    fortuneAudio.addEventListener('play', () => {
+      setTimeout(() => {
+        ticketSlotAnimation.style.display = 'block';
+        takeTextEl.style.display = 'flex';
+
+        ticketSlotAnimation.setAttribute('data-autoplay', '1');
+        const ticketSlotInst = Webflow.require('lottie')
+          .createInstance(ticketSlotAnimation);
+        ticketSlotInst.play();
+      }, 15000);
+    });
+
+    grabTicket.addEventListener('click', () => {
+      fortuneAnimation.style.opacity = '0';
+
+      fortuneAnimation.addEventListener('transitionend', function handler() {
+        fortuneAnimation.style.display = 'none';
+        fortuneAnimation.removeEventListener('transitionend', handler);
+      });
+    });
+
     // SLIDER
+    $('.range').bind('touchend mouseup', function (e) {
+      if (slider.value > 340) {
+        $(".cookie__release").click();
+      }
+    });
+
     document.documentElement.scrollTop = 0;
     var vh = window.innerHeight;
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
-
-    // Play interaction when lifting up on slider
-    $('.range').bind('touchend mouseup', function (e) {
-      if (slider.value > 340) {
-        $(".cookie__release").click();
-        $(".next-link").click();
-      }
-    });
 
     // Update the current slider value (each time you drag the slider handle)
     slider.oninput = function () {
@@ -583,6 +765,7 @@
 
     }
 
+    // Ticket
     var random = Math.floor(Math.random() * jQuery('.ticket__paragraph').length);
     var myFortune = jQuery('.ticket__paragraph').hide().eq(random);
     myFortune.show();
@@ -592,7 +775,70 @@
     } else {
       $('.ticket__naughty').css('display', 'block');
     }
+
+    // Score Section
+    const ticket = document.querySelector('.ticket');
+    const scoreTable = document.querySelector('.score-table');
+    const totalScore = document.querySelector('.total-score');
+    const scoreNextButton = document.getElementById('score-next');
+    const scoreFinishButton = document.getElementById('score-finish');
+    const ticketFront = document.querySelector('.ticket__front');
+    const ticketBack = document.querySelector('.ticket__back');
+    const ticketContain = document.querySelector('.ticket__contain');
+
+    function handleShowScore() {
+      scoreSection.style.display = 'flex';
+      scoreSection.style.zIndex = '999999';
+      setTimeout(() => {
+        scoreSection.classList.add('active');
+      }, 50);
+
+      ticket.style.display = 'none';
+
+      santarContainer.style.display = 'none';
+      santarContainer.style.opacity = '0';
+      santarContainer.style.pointerEvents = 'none';
+
+      scoreTable.style.display = 'block';
+      totalScore.style.display = 'none';
+      scoreNextButton.style.display = 'block';
+      scoreFinishButton.style.display = 'none';
+    }
+
+    function handleNextScore() {
+      scoreTable.style.display = 'none';
+      totalScore.style.display = 'block';
+
+      scoreNextButton.style.display = 'none';
+      scoreFinishButton.style.display = 'block';
+    }
+
+    function handleScoreFinish() {
+      scoreSection.classList.add('exiting');
+
+      setTimeout(() => {
+        scoreSection.style.display = 'none';
+        scoreSection.classList.remove('active', 'exiting');
+        fortuneAnimation.style.display = 'none';
+
+        ticket.classList.add('ticket-visible');
+        ticket.style.display = 'block';
+        ticketFront.style.display = 'none';
+        ticketBack.style.display = 'block';
+        ticketContain.style.transform = 'none';
+        ticketContain.style.transformStyle = 'preserve-3d';
+        
+        santarContainer.style.display = 'block';
+        santarContainer.style.opacity = '1';
+        santarContainer.style.pointerEvents = 'auto';
+      }, 400);
+    }
   </script>
+
+  <script src="quiz.js" defer></script>
+  <script src="score.js" defer></script>
+
+
 </body>
 
 </html>
