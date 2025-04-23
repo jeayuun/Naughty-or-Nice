@@ -72,15 +72,10 @@ function handleNextScore() {
     // 🔐 Decide the nice/naughty category ONCE
     const isNice = totalScorePercentage >= 50;
 
-    // 🔄 Update ticket visuals
-    if (isNice) {
-      $('.ticket__nice').show();
-      $('.ticket__naughty').hide();
-    } else {
-      $('.ticket__nice').hide();
-      $('.ticket__naughty').show();
-    }
-
+ // 🔄 Update ticket visuals
+    $('.ticket__nice, .ticket__naughty').hide();
+    $(isNice ? '.ticket__nice' : '.ticket__naughty').show();
+    
     // 🖼️ Update image
     $('.score-category-image img').hide();
     $(isNice ? '.nice-image' : '.naughty-image').show();
