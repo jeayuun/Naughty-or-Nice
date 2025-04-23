@@ -2970,7 +2970,7 @@ blockquote {
 }
 
 .score-container {
-  background-image: url(./assets/images/score_page.svg);
+  background-image: url('./assets/images/score_page.svg');
   height: 115%;
   margin-top: 70px;
 }
