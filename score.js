@@ -71,9 +71,10 @@ function handleNextScore() {
       ? Math.round(percentages.reduce((a, b) => a + b) / percentages.length)
       : 0;
 
-    const isNice = totalScorePercentage >= 50; // OR however you define "nice"
+    // 🔐 Decide the nice/naughty category ONCE
+    const isNice = totalScorePercentage >= 50;
 
-    // Update Ticket Head
+    // 🔄 Update ticket visuals
     if (isNice) {
       $('.ticket__nice').show();
       $('.ticket__naughty').hide();
@@ -82,25 +83,22 @@ function handleNextScore() {
       $('.ticket__naughty').show();
     }
 
-    // Update Image
+    // 🖼️ Update image
     $('.score-category-image img').hide();
     $(isNice ? '.nice-image' : '.naughty-image').show();
+
+    // 📝 Score message
     let message = '';
 
-    if (isNice) {
-      if (totalScorePercentage >= 85) {
-        message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> 🎅✨<br>
-                   Angel status! Santar wants to recruit you for his sleigh team.`;
-      } else if (totalScorePercentage >= 50) {
-        message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> ☃️<br>
-                   Santar confirms you've earned your spot on the nice list.`;
-      } else {
-        message = `You only got a total score of ${totalScorePercentage}%! 😓<br>
-                   Santar's side-eyeing your choices... but there's hope!`;
-      }
+    if (isNice && totalScorePercentage >= 85) {
+      message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> 🎅✨<br>
+                Angel status! Santar wants to recruit you for his sleigh team.`;
+    } else if (isNice) {
+      message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> ☃️<br>
+                Santar confirms you've earned your spot on the nice list.`;
     } else {
       message = `You got ${totalScorePercentage}%! Better luck next year! 🎁<br>
-                 Maybe try helping more elves or feeding the reindeer.`;
+                Maybe try helping more elves or feeding the reindeer.`;
     }
 
     const remainingPercentage = 100 - totalScorePercentage;
