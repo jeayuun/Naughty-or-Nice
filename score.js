@@ -1,5 +1,6 @@
 let currentScorePage = 0;
 let scoreTables = []; // Store generated tables
+let allPercentages = [];
 
 // Individual Score Logic Here @David
 function populateIndividualScores(quizData, answers, page = 0) {
@@ -17,14 +18,18 @@ function populateIndividualScores(quizData, answers, page = 0) {
     if (selectedOption) {
       const row = document.createElement('div');
       row.className = 'score-row';
-
+    
       row.innerHTML = `
         <span class="question">${question.q}</span>
         <span class="answer">${selectedOption.text}</span>
         <span class="percentage">${userValue}%</span>
       `;
-
+    
       table.appendChild(row);
+    
+      // 🔥 Collect percentage score
+      const percent = parseInt(userValue);
+      if (!isNaN(percent)) allPercentages.push(percent);
     }
   }
 }
@@ -60,25 +65,26 @@ function handleNextScore() {
     scoreFinishButton.style.display = 'none';
   } else {
     // Now it's time to show the final score
-    let percentages = [];
 
-    const rows = scoreTable.querySelectorAll('.score-row:not(.header)');
-    rows.forEach(row => {
-      const percentSpan = row.querySelector('.percentage');
-      if (percentSpan) {
-        const percent = parseInt(percentSpan.textContent.replace('%', ''));
-        if (!isNaN(percent)) percentages.push(percent);
-      }
-    });
-
+    const percentages = allPercentages;
     const totalScorePercentage = percentages.length > 0 
       ? Math.round(percentages.reduce((a, b) => a + b) / percentages.length)
       : 0;
 
-    const isNice = $('.ticket__nice').css('display') === 'block';
-    $('.score-category-image').hide();
-    $(isNice ? '.nice-image' : '.naughty-image').show();
+    const isNice = totalScorePercentage >= 50; // OR however you define "nice"
 
+    // Update Ticket Head
+    if (isNice) {
+      $('.ticket__nice').show();
+      $('.ticket__naughty').hide();
+    } else {
+      $('.ticket__nice').hide();
+      $('.ticket__naughty').show();
+    }
+
+    // Update Image
+    $('.score-category-image img').hide();
+    $(isNice ? '.nice-image' : '.naughty-image').show();
     let message = '';
 
     if (isNice) {
