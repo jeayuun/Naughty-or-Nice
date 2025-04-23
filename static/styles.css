@@ -3007,8 +3007,9 @@ blockquote {
   font-family: Montserrat, sans-serif;
   width: 100%;
   border-collapse: collapse;
-  font-size: 2.8vh;
-  font-weight: 500;
+  font-size: 2vh;
+  font-weight: 400;
+  line-height: 1.4;
   text-align: left;
   font-weight: bold;
   margin-top: -30px;
@@ -3023,6 +3024,8 @@ blockquote {
 .score-row.header {
   color: #c91b1a;
   font-weight: bold;
+  text-transform: uppercase;
+  font-family: shackleton, sans-serif;
 }
 
 .score-row span {
@@ -3207,6 +3210,11 @@ blockquote {
 .quiz-section.exiting {
   opacity: 0 !important;
   transform: translateY(20px) scale(0.98);
+}
+
+.fortune-animation {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 @media screen and (max-width: 767px) {

@@ -1,7 +1,7 @@
 let currentScorePage = 0;
 let scoreTables = []; 
 
-// Individual Score Logic 
+// Individual Score Logic
 function populateIndividualScores(quizData, answers, page = 0) {
   const table = document.querySelector('.score-table');
   table.querySelectorAll('.score-row:not(.header)').forEach(row => row.remove());
@@ -17,18 +17,19 @@ function populateIndividualScores(quizData, answers, page = 0) {
     if (selectedOption) {
       const row = document.createElement('div');
       row.className = 'score-row';
-
+    
       row.innerHTML = `
         <span class="question">${question.q}</span>
         <span class="answer">${selectedOption.text}</span>
         <span class="percentage">${userValue}%</span>
       `;
-
+    
       table.appendChild(row);
+    
+      const percent = parseInt(userValue);
     }
   }
 }
-
 
 // Total Score Logic
 function handleNextScore() {
@@ -44,6 +45,7 @@ function handleNextScore() {
 
   const totalPages = Math.ceil(quizData.length / 10);
 
+
   if (currentScorePage < totalPages) {
     scoreTable.style.display = 'block';
     totalScore.style.display = 'none';
@@ -55,34 +57,32 @@ function handleNextScore() {
     scoreNextButton.style.display = 'block';
     scoreFinishButton.style.display = 'none';
   } else {
-    let percentages = [];
 
-    const rows = scoreTable.querySelectorAll('.score-row:not(.header)');
-    rows.forEach(row => {
-      const percentSpan = row.querySelector('.percentage');
-      if (percentSpan) {
-        const percent = parseInt(percentSpan.textContent.replace('%', ''));
-        if (!isNaN(percent)) percentages.push(percent);
-      }
-    });
-
+    const percentages = answers.map(value => parseInt(value)).filter(p => !isNaN(p));
     const totalScorePercentage = percentages.length > 0 
-      ? Math.round(percentages.reduce((a, b) => a + b) / percentages.length)
-      : 0;
+    ? Math.round(percentages.reduce((a, b) => a + b) / percentages.length)
+    : 0;
 
-    const isNice = $('.ticket__nice').css('display') === 'block';
-    $('.score-category-image').hide();
+    const isNice = totalScorePercentage >= 50;
+
+    $('.ticket__nice, .ticket__naughty').hide();
+    $(isNice ? '.ticket__nice' : '.ticket__naughty').show();
+
+
+    $('.score-category-image img').hide();
     $(isNice ? '.nice-image' : '.naughty-image').show();
 
     let message = '';
-    if (isNice) {
-      if (totalScorePercentage >= 85) {
-        message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> 🎅✨<br> Angel status! Santar wants to recruit you for his sleigh team.`;
-      } else if (totalScorePercentage >= 50) {
-        message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> ☃️<br> Santar confirms you've earned your spot on the nice list.`;
-      }
+
+    if (isNice && totalScorePercentage >= 85) {
+      message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> 🎅✨<br>
+                Angel status! Santar wants to recruit you for his slzeigh team.`;
+    } else if (isNice) {
+      message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> ☃️<br>
+                Santar confirms you've earned your spot on the nice list.`;
     } else {
-      message = `You only got a total score of ${totalScorePercentage}%! 😓<br> Santar's side-eyeing your choices... but there's hope!`;
+      message = `You got ${totalScorePercentage}%! Better luck next year! 🎁<br>
+                Maybe try helping more elves or feeding the reindeer.`;
     }
 
     const remainingPercentage = 100 - totalScorePercentage;

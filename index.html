@@ -340,8 +340,12 @@
                     Let's face it: you're the reason Santa has a naughty list. You know what you did.<br />
                   </p>
                 </div>
+
                 <button id="score-button" class="score-button" onclick="handleShowScore()">
                   <img src="static/assets/images/score.png" alt="View Score" class="score-button__img" />
+                </button>
+                <button id="retake-btn" class="score-button" style="display: none; opacity: 0;" onclick="retakeQuiz()">
+                  <img alt="refresh link" class="score-button__img" src="static/assets/images/retake_btn.png" />
                 </button>
               </div>
 
@@ -386,7 +390,7 @@
             <div class="score-table">
               <div class="score-row header">
                 <span>Santar Asks</span>
-                <span>You Picked</span>
+                <span style="margin-left: -10px;">You Picked</span>
                 <span>% Nice</span>
               </div>
 
@@ -643,11 +647,9 @@
     });
 
     $(".tricks-press__final").click(function () {
-
       setTimeout(() => {
         cookie.play();
       }, 11500);
-
     });
 
     // PLAY COIN
@@ -706,7 +708,6 @@
         fortuneAnimation.style.display = 'none';
         fortuneAnimation.style.opacity = '0';
         fortuneAnimation.setAttribute('data-autoplay', '0');
-        fortuneAnimation.pause();
         fortuneAnimation.currentTime = 0;
 
         void quizSection.offsetWidth;
@@ -723,6 +724,7 @@
       santarContainer.style.opacity = '1';
       santarContainer.style.pointerEvents = 'auto';
 
+      fortuneAnimation.classList.add('fortune-animation');
       fortuneAnimation.style.display = 'block';
       fortuneAnimation.style.opacity = '1';
       const fortuneInst = Webflow.require('lottie').createInstance(fortuneAnimation);
@@ -844,7 +846,17 @@
         santarContainer.style.display = 'block';
         santarContainer.style.opacity = '1';
         santarContainer.style.pointerEvents = 'auto';
+        
+        document.getElementById('score-button').style.display = 'none'; 
+        document.getElementById('score-button').style.opacity = '0'; 
+        document.getElementById('retake-btn').style.display = 'block';
+        document.getElementById('retake-btn').style.opacity = '1';
+        document.querySelector('.ticket__retry').style.display = 'none';
       }, 400);
+    }
+
+    function retakeQuiz() {
+      window.location.href = "https://jeayuun.github.io/Naughty-or-Nice/";
     }
   </script>
 
