@@ -76,13 +76,13 @@ function handleNextScore() {
 
     if (isNice && totalScorePercentage >= 85) {
       message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> 🎅✨<br>
-                Angel status! Santar wants to recruit you for his slzeigh team.`;
+                Angel status! Santar wants to recruit you for his sleigh team.`;
     } else if (isNice) {
       message = `<strong>You got a total score of ${totalScorePercentage}%!</strong> ☃️<br>
                 Santar confirms you've earned your spot on the nice list.`;
     } else {
-      message = `You got ${totalScorePercentage}%! Better luck next year! 🎁<br>
-                Maybe try helping more elves or feeding the reindeer.`;
+      message = `<strong>You got ${totalScorePercentage}%!</strong> 😓<br> 
+                Santar's side-eyeing your choices... Better luck next year!`;
     }
 
     const remainingPercentage = 100 - totalScorePercentage;
