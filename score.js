@@ -26,7 +26,6 @@ function populateIndividualScores(quizData, answers, page = 0) {
     
       table.appendChild(row);
     
-      // 🔥 Collect percentage score
       const percent = parseInt(userValue);
     }
   }
@@ -46,41 +45,39 @@ function handleNextScore() {
   populateIndividualScores(quizData, answers, currentScorePage);
   currentScorePage++;
 
-  // We assume each page is 10 questions
   const totalPages = Math.ceil(quizData.length / 10);
 
-  // If we still have more pages to show, do NOT show final score yet
+
   if (currentScorePage < totalPages) {
     scoreTable.style.display = 'block';
     totalScore.style.display = 'none';
     scoreNextButton.style.display = 'block';
     scoreFinishButton.style.display = 'none';
   } else if (currentScorePage === totalPages) {
-    // Last page of individual scores shown — next click will show total score
+    // Last page of individual scores shown 
     scoreTable.style.display = 'block';
     totalScore.style.display = 'none';
     scoreNextButton.style.display = 'block';
     scoreFinishButton.style.display = 'none';
   } else {
-    // Now it's time to show the final score
 
+    // Final Score
     const percentages = answers.map(value => parseInt(value)).filter(p => !isNaN(p));
     const totalScorePercentage = percentages.length > 0 
     ? Math.round(percentages.reduce((a, b) => a + b) / percentages.length)
     : 0;
 
-    // 🔐 Decide the nice/naughty category ONCE
+
     const isNice = totalScorePercentage >= 50;
 
- // 🔄 Update ticket visuals
+
     $('.ticket__nice, .ticket__naughty').hide();
     $(isNice ? '.ticket__nice' : '.ticket__naughty').show();
-    
-    // 🖼️ Update image
+
+
     $('.score-category-image img').hide();
     $(isNice ? '.nice-image' : '.naughty-image').show();
 
-    // 📝 Score message
     let message = '';
 
     if (isNice && totalScorePercentage >= 85) {
