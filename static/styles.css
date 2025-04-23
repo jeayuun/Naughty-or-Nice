@@ -12,11 +12,7 @@ body {
 }
 
 * {
-  cursor: url('/static/assets/images/cursor_pointer.png'), auto;
-}
-
-.long-press-cursor {
-  cursor: url('/static/assets/images/cursor_hold.png'), auto !important;
+  cursor: url('./assets/images/cursor_pointer.png'), auto;
 }
 
 article,
@@ -2081,7 +2077,7 @@ blockquote {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-image: url("/static/assets/images/background.jpg");
+  background-image: url("./assets/images/background.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2233,7 +2229,7 @@ blockquote {
 
 .box__bottom-contain {
   height: 12vh;
-  background-image: url("/static/assets/images/line.svg");
+  background-image: url("./assets/images/line.svg");
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: 120%;
@@ -2627,6 +2623,7 @@ blockquote {
 
   .enter__2-contain {
     font-size: 2vh;
+    width: 300px;
   }
 
   .contrast {
@@ -2734,7 +2731,7 @@ blockquote {
 
 @font-face {
   font-family: 'Youngserif';
-  src: url('/static/assets/YoungSerif-Regular.otf') format('opentype');
+  src: url('./assets/YoungSerif-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -2742,7 +2739,7 @@ blockquote {
 
 @font-face {
   font-family: 'shackleton';
-  src: url('/static/assets/Shackleton.otf') format('opentype');
+  src: url('./assets/Shackleton.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -2814,7 +2811,7 @@ blockquote {
 
 .quiz-container, .score-container {
   position: relative; 
-  background-image: url('/static/assets/images/quiz_page.svg');
+  background-image: url('./assets/images/quiz_page.svg');
   background-size: cover;
   background-position: center;
   padding: 3rem;
@@ -2973,7 +2970,7 @@ blockquote {
 }
 
 .score-container {
-  background-image: url(/static/assets/images/score_page.svg);
+  background-image: url(./assets/images/score_page.svg);
   height: 115%;
   margin-top: 70px;
 }
@@ -3210,4 +3207,176 @@ blockquote {
 .quiz-section.exiting {
   opacity: 0 !important;
   transform: translateY(20px) scale(0.98);
+}
+
+@media screen and (max-width: 767px) {
+  .quiz-container {
+    padding: 10px;
+  }
+
+  .quiz-buttons {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .quiz-next, .quiz-finish {
+    width: 80%;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .score-container {
+    padding: 15px;
+  }
+
+  .score-logo {
+    max-width: 300px;
+  }
+
+  .score-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .enter__2 {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .enter__story {
+    font-size: 1em;  
+  }
+
+  .enter__2-contain {
+    padding: 10px;
+  }
+}
+
+
+
+@media screen and (max-width: 991px) {
+  .quiz-container {
+    padding: 1rem;
+  }
+
+  .quiz-question {
+    font-size: 2.5vh;
+  }
+
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-option {
+    font-size: 1.8vh;
+  }
+
+  .quiz-logo {
+    max-width: 300px;
+  }
+
+  .quiz-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .quiz-content {
+    padding: 0px;
+  }
+
+  .quiz-container {
+    padding: 1rem;
+  }
+
+  .quiz-question {
+    font-size: 2.2vh;
+  }
+
+  .quiz-options {
+    grid-template-columns: 1fr !important;
+    margin: 1rem;
+    gap: 0.8rem; 
+  }
+
+  .quiz-option {
+    font-size: 2vh;
+  }
+
+  .quiz-buttons {
+    gap: 1.5rem;
+    margin-top: 0rem;
+  }
+
+  .quiz-container img {
+    max-width: 330px; 
+  }
+
+  .quiz-logo {
+    top: 5px;
+  }
+
+  .score-container {
+    padding: 15px;
+  }
+
+  .score-logo {
+    max-width: 300px;
+  }
+
+  .score-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .quiz-content {
+    padding: 0px;
+  }
+
+  .quiz-question {
+    font-size: 2vh;
+  }
+
+  .quiz-options {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem; 
+    margin: 1rem;
+  }
+
+  .quiz-option {
+    font-size: 1.8vh;
+    padding: 12px;
+  }
+
+  .quiz-container img {
+    max-width: 300px; 
+  }
+
+  .quiz-logo {
+    top: 30px;
+    max-width: 100px;
+  }
+
+  .quiz-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .enter__2 {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .enter__2-contain {
+    padding: 10px;
+  }
 }
