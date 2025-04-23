@@ -14,15 +14,28 @@
   <link href="static/assets/images/appicon.png" rel="apple-touch-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="body">
   <div class="global" id="start">
     <div class="html w-embed">
       <style>
-        .santah__lottie-3, .santah__lottie-4, .santah__lottie-5, .santah__lottie-6, .santah__lottie-7, .santah__lottie-8, .santah__lottie-9,        
-        .ice, .bottom, .curtains, .contrast, .santah__lottie-10, .press-text, .take-text {
+        .santah__lottie-3,
+        .santah__lottie-4,
+        .santah__lottie-5,
+        .santah__lottie-6,
+        .santah__lottie-7,
+        .santah__lottie-8,
+        .santah__lottie-9,
+        .ice,
+        .bottom,
+        .curtains,
+        .contrast,
+        .santah__lottie-10,
+        .press-text,
+        .take-text {
           pointer-events: none;
         }
       </style>
@@ -60,6 +73,9 @@
     </audio>
     <audio id="fortune">
       <source src="static/assets/audio/naughty_or_nice_outro.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="pop" preload="auto">
+      <source src="static/assets/audio/pop.mp3" type="audio/mpeg" />
     </audio>
   </div>
 
@@ -363,10 +379,10 @@
       <div class="score-section" style="display: none;">
         <div class="score-container">
           <img src="static/assets/images/score_page_logo.svg" alt="Score Logo" class="quiz-logo"
-            style="max-width: 400px;" />
+            style="max-width: 400px; top: 15px;" />
           <div class="score-content">
 
-            <!-- Individual Score (WITH PLACEHOLDER DATA ONLY, convert to JS @David) -->
+            <!-- Individual Score -->
             <div class="score-table">
               <div class="score-row header">
                 <span>Santar Asks</span>
@@ -374,56 +390,7 @@
                 <span>% Nice</span>
               </div>
 
-              <div class="score-row">
-                <span class="question">What's your favorite Christmas movie?</span>
-                <span class="answer">Seven Sundays (2017)</span>
-                <span class="percentage">75%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">What's your go-to Christmas jam?</span>
-                <span class="answer">Star ng Pasko by ABS-CBN</span>
-                <span class="percentage">50%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">Your tree topper is...</span>
-                <span class="answer">A majestic star. Classic.</span>
-                <span class="percentage">100%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">Carolers arrive to your door. You...</span>
-                <span class="answer">Hide in the kitchen.</span>
-                <span class="percentage">50%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">What's your go-to Christmas jam?</span>
-                <span class="answer">Star ng Pasko by ABS-CBN</span>
-                <span class="percentage">50%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">Carolers arrive to your door. You...</span>
-                <span class="answer">Hide in the kitchen.</span>
-                <span class="percentage">50%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">What's your go-to Christmas jam?</span>
-                <span class="answer">Star ng Pasko by ABS-CBN</span>
-                <span class="percentage">50%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">Carolers arrive to your door. You...</span>
-                <span class="answer">Hide in the kitchen.</span>
-                <span class="percentage">50%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">What's your favorite Christmas movie?</span>
-                <span class="answer">Seven Sundays (2017)</span>
-                <span class="percentage">75%</span>
-              </div>
-              <div class="score-row">
-                <span class="question">What's your go-to Christmas jam?</span>
-                <span class="answer">Star ng Pasko by ABS-CBN</span>
-                <span class="percentage">50%</span>
-              </div>
+              <div class="score-row"></div>
             </div>
 
             <!-- Total Score -->
@@ -689,7 +656,7 @@
     const santarContainer = document.querySelector('.contain.santar');
     const cookieLaunch = document.querySelector('.santah__lottie-7');
     const fortuneAnimation = document.querySelector('.santah__lottie-8');
-    const ticketSlotAnimation = document.querySelector('.santah__lottie-9'); 
+    const ticketSlotAnimation = document.querySelector('.santah__lottie-9');
     const grabTicket = document.querySelector('.grab-ticket');
     const takeTextEl = document.querySelector('.take-text');
     const coinAudio = document.getElementById('coin');
@@ -698,15 +665,15 @@
 
     function showQuiz() {
       quizSection.style.display = 'flex';
-      
+
       const logo = document.querySelector('.quiz-logo');
       logo.style.opacity = '1';
       logo.style.transform = 'translateY(30px) rotate(-5deg)';
 
       void quizSection.offsetWidth;
-      
+
       quizSection.classList.add('active');
-      
+
       setTimeout(() => {
         logo.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
         logo.style.opacity = '1';
@@ -718,14 +685,14 @@
       coinAudio.play();
 
       cookieLaunch.style.display = 'block';
-      cookieLaunch.setAttribute('data-autoplay', '1'); 
+      cookieLaunch.setAttribute('data-autoplay', '1');
 
-      void cookieLaunch.offsetWidth; 
+      void cookieLaunch.offsetWidth;
 
       setTimeout(() => {
         cookieLaunch.style.display = 'none';
         cookieLaunch.setAttribute('data-autoplay', '0');
-        cookieLaunch.currentTime = 0; 
+        cookieLaunch.currentTime = 0;
 
         document.querySelector('.contain.is--absolute').style.display = 'none';
         document.querySelector('.contain.is--absolute').style.pointerEvents = 'none';
@@ -738,33 +705,30 @@
 
         fortuneAnimation.style.display = 'none';
         fortuneAnimation.style.opacity = '0';
-        fortuneAnimation.setAttribute('data-autoplay', '0'); 
+        fortuneAnimation.setAttribute('data-autoplay', '0');
         fortuneAnimation.pause();
         fortuneAnimation.currentTime = 0;
 
         void quizSection.offsetWidth;
-      }, 1100); 
+      }, 1100);
     });
 
     function handleQuizFinish() {
       quizSection.classList.add('exiting');
-      
-      setTimeout(() => {
-        quizSection.classList.remove('active');
-        quizSection.style.display = 'none';
-        quizSection.classList.remove('exiting');
-        
-        santarContainer.style.display = 'block';
-        santarContainer.style.opacity = '1';
-        santarContainer.style.pointerEvents = 'auto';
-        
-        fortuneAnimation.style.display = 'block';
-        fortuneAnimation.style.opacity = '1';
-        const fortuneInst = Webflow.require('lottie').createInstance(fortuneAnimation);
-        fortuneInst.play();
-        fortuneAudio.play();
-        isFortunePlaying = true;
-      }, 400);
+      quizSection.classList.remove('active');
+      quizSection.style.display = 'none';
+      quizSection.classList.remove('exiting');
+
+      santarContainer.style.display = 'block';
+      santarContainer.style.opacity = '1';
+      santarContainer.style.pointerEvents = 'auto';
+
+      fortuneAnimation.style.display = 'block';
+      fortuneAnimation.style.opacity = '1';
+      const fortuneInst = Webflow.require('lottie').createInstance(fortuneAnimation);
+      fortuneInst.play();
+      fortuneAudio.play();
+      isFortunePlaying = true;
     }
 
     fortuneAudio.addEventListener('play', () => {
@@ -876,7 +840,7 @@
         ticketBack.style.display = 'block';
         ticketContain.style.transform = 'none';
         ticketContain.style.transformStyle = 'preserve-3d';
-        
+
         santarContainer.style.display = 'block';
         santarContainer.style.opacity = '1';
         santarContainer.style.pointerEvents = 'auto';
