@@ -1,6 +1,5 @@
 let currentScorePage = 0;
 let scoreTables = []; // Store generated tables
-let allPercentages = [];
 
 // Individual Score Logic Here @David
 function populateIndividualScores(quizData, answers, page = 0) {
@@ -29,7 +28,6 @@ function populateIndividualScores(quizData, answers, page = 0) {
     
       // 🔥 Collect percentage score
       const percent = parseInt(userValue);
-      if (!isNaN(percent)) allPercentages.push(percent);
     }
   }
 }
@@ -66,10 +64,10 @@ function handleNextScore() {
   } else {
     // Now it's time to show the final score
 
-    const percentages = allPercentages;
+    const percentages = answers.map(value => parseInt(value)).filter(p => !isNaN(p));
     const totalScorePercentage = percentages.length > 0 
-      ? Math.round(percentages.reduce((a, b) => a + b) / percentages.length)
-      : 0;
+    ? Math.round(percentages.reduce((a, b) => a + b) / percentages.length)
+    : 0;
 
     // 🔐 Decide the nice/naughty category ONCE
     const isNice = totalScorePercentage >= 50;
