@@ -1,5 +1,4 @@
 let currentScorePage = 0;
-let scoreTables = []; // Store generated tables
 
 // Individual Score Logic Here @David
 function populateIndividualScores(quizData, answers, page = 0) {
@@ -71,12 +70,11 @@ function handleNextScore() {
     const isNice = totalScorePercentage >= 50;
 
 
-    $('.ticket__nice, .ticket__naughty').hide();
-    $(isNice ? '.ticket__nice' : '.ticket__naughty').show();
+    document.querySelectorAll('.ticket__nice, .ticket__naughty').forEach(el => el.style.display = 'none');
+    document.querySelector(isNice ? '.ticket__nice' : '.ticket__naughty').style.display = 'block';
 
-
-    $('.score-category-image img').hide();
-    $(isNice ? '.nice-image' : '.naughty-image').show();
+    document.querySelectorAll('.score-category-image img').forEach(img => img.style.display = 'none');
+    document.querySelector(isNice ? '.nice-image' : '.naughty-image').style.display = 'block';
 
     let message = '';
 
@@ -92,10 +90,10 @@ function handleNextScore() {
     }
 
     const remainingPercentage = 100 - totalScorePercentage;
-    $('.progress-fill').css('width', `${totalScorePercentage}%`);
-    $('.progress-percentage').text(`${totalScorePercentage}%`);
-    $('#progress-left').text(`${remainingPercentage}%`);
-    $('.score-message').html(message);
+    document.querySelector('.progress-fill').style.width = `${totalScorePercentage}%`;
+    document.querySelector('.progress-percentage').textContent = `${totalScorePercentage}%`;
+    document.getElementById('progress-left').textContent = `${remainingPercentage}%`;
+    document.querySelector('.score-message').innerHTML = message;
 
     // Final UI update
     scoreTable.style.display = 'none';
